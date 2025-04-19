@@ -1,3 +1,30 @@
 @use "./variables";
 @use "./fonts";
 @use "./normalize";
+@use "./main";
+
+body {
+  font-family: var(--ff);
+  font-weight: 400;
+  font-size: 16px;
+  color: var(--color_text);
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  main {
+    flex-grow: 1;
+  }
+  // &.lock {
+  //   overflow: hidden;
+  //   &::after {
+  //     content: "";
+  //     position: absolute;
+  //     left: 0;
+  //     top: 0;
+  //     width: 100%;
+  //     height: 100%;
+  //     background-color: rgba(0, 0, 0, 0.2);
+  //     transition: 0.3s;
+  //   }
+  // }
+}
