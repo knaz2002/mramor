@@ -12,14 +12,14 @@ let active = false;
 //Sort overflow out for Overlay Image
 document.addEventListener("DOMContentLoaded", function() {
   let width = slider.offsetWidth;
-  console.log(width);
+  // console.log(width);
   beforeImage.style.width = width + 'px';
 });
 
 //Adjust width of image on resize 
 window.addEventListener('resize', function() {
   let width = slider.offsetWidth;
-  console.log(width);
+  // console.log(width);
   beforeImage.style.width = width + 'px';
 })
 
@@ -101,10 +101,11 @@ const swiper = new Swiper(".banner-slider", {
     el: ".swiper-pagination",
     type: "progressbar",
   },
-  // navigation: {
-  //   nextEl: ".swiper-button-next",
-  //   prevEl: ".swiper-button-prev",
-  // },
+
+  navigation: {
+    nextEl: ".swiper-button-next",
+    prevEl: ".swiper-button-prev",
+  },
 });
 
 
