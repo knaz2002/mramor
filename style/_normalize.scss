@@ -171,6 +171,8 @@ section {
   font-size: 16px;
   transition: 0.3s;
   cursor: pointer;
+  position: relative;
+  overflow: hidden;
   &:focus {
     box-shadow: 0 0 0 2px rgba(var(--primary), 0.5);
     outline: none;
@@ -192,13 +194,21 @@ section {
   &.btn-light {
     background-color: rgba(var(--light));
     color: var(--color_text);
-    position: relative;
-    overflow: hidden;
+
     &:hover {
       @media (any-hover: hover) {
         background-color: rgba(var(--primary), 1);
         color: rgba(var(--light));
         box-shadow: 0 0 50px rgba(var(--primary), 0.2) inset;
+      }
+    }
+  }
+  &.btn-dark {
+    background-color: rgb(var(--dark));
+    color: rgba(var(--light));
+    &:hover {
+      @media (any-hover: hover) {
+        background-color: rgba(var(--primary), 1);
       }
     }
   }

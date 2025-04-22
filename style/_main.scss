@@ -43,8 +43,15 @@
       justify-content: center;
       align-items: center;
       flex: 0 0 56px;
+      max-width: 56px;
       padding-top: 0;
       padding-bottom: 0;
+      svg {
+        width: 20px;
+        height: 20px;
+        display: flex;
+        flex: 0 0 20px;
+      }
     }
   }
   &__btn {
@@ -377,4 +384,114 @@
   &__descr {
     color: rgba(var(--dark), 0.6);
   }
+}
+
+.thermal {
+  &__list {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    overflow: hidden;
+    gap: 20px;
+  }
+}
+.thermal-card {
+  background-color: rgba(var(--dark), 0.04);
+  overflow: hidden;
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  &:hover {
+    @media (any-hover: hover) {
+      .btn.btn-dark {
+        background-color: rgba(var(--primary), 1);
+      }
+    }
+  }
+  &__head {
+    overflow: hidden;
+    margin-bottom: 32px;
+    .swiper {
+    }
+    .swiper-pagination {
+    }
+    .swiper-pagination-bullet {
+      background-color: rgba(var(--dark), 0.24);
+      opacity: 1;
+      margin: 2px !important;
+      padding: 0;
+      width: 4px;
+      height: 4px;
+      &.swiper-pagination-bullet-active {
+        background-color: rgba(var(--primary), 1);
+        position: relative;
+        &::after {
+          content: "";
+          width: 1em;
+          position: absolute;
+          left: 0;
+          top: 0;
+          height: 100%;
+          background-color: red;
+        }
+      }
+    }
+  }
+  &__body {
+  }
+  &__footer {
+    margin-top: auto;
+    .btn {
+      width: 100%;
+      text-align: center;
+    }
+  }
+  &__name {
+    font-size: 24px;
+    font-weight: 600;
+    margin-bottom: 16px;
+  }
+  &__descr {
+    font-size: 16px;
+    font-weight: 400;
+    color: rgba(var(--dark), 0.6);
+    margin-bottom: 24px;
+  }
+  &__table {
+    margin-bottom: 24px;
+  }
+  &__row {
+    display: flex;
+    // align-items: center;
+    justify-content: space-between;
+    margin-bottom: 12px;
+    &:last-child {
+      margin-bottom: 0;
+    }
+    div {
+      &:nth-child(2) {
+        flex-grow: 1;
+        border-bottom: dashed 1px rgba(var(--dark), 0.24);
+        margin: 0 5px 0.7em;
+      }
+    }
+  }
+  &__row-tags {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 5px;
+    margin-left: auto;
+    justify-content: flex-end;
+    span {
+      display: inline-block;
+      border: solid 1px rgba(var(--dark), 0.24);
+      border-radius: 30px;
+      padding: 4px 8px;
+      font-size: 14px;
+      font-weight: 400;
+    }
+  }
+}
+.thermal-card-slider {
+  overflow: hidden;
 }

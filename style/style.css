@@ -209,6 +209,8 @@ section {
   font-size: 16px;
   transition: 0.3s;
   cursor: pointer;
+  position: relative;
+  overflow: hidden;
 }
 .btn:focus {
   box-shadow: 0 0 0 2px rgba(var(--primary), 0.5);
@@ -229,14 +231,21 @@ section {
 .btn.btn-light {
   background-color: rgba(var(--light));
   color: var(--color_text);
-  position: relative;
-  overflow: hidden;
 }
 @media (any-hover: hover) {
   .btn.btn-light:hover {
     background-color: rgba(var(--primary), 1);
     color: rgba(var(--light));
     box-shadow: 0 0 50px rgba(var(--primary), 0.2) inset;
+  }
+}
+.btn.btn-dark {
+  background-color: rgb(var(--dark));
+  color: rgba(var(--light));
+}
+@media (any-hover: hover) {
+  .btn.btn-dark:hover {
+    background-color: rgba(var(--primary), 1);
   }
 }
 
@@ -394,8 +403,15 @@ section {
   justify-content: center;
   align-items: center;
   flex: 0 0 56px;
+  max-width: 56px;
   padding-top: 0;
   padding-bottom: 0;
+}
+.header__social .btn svg {
+  width: 20px;
+  height: 20px;
+  display: flex;
+  flex: 0 0 20px;
 }
 .header__btn {
   white-space: nowrap;
@@ -723,6 +739,105 @@ section {
 }
 .smart-choice-item__descr {
   color: rgba(var(--dark), 0.6);
+}
+
+.thermal__list {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  overflow: hidden;
+  gap: 20px;
+}
+
+.thermal-card {
+  background-color: rgba(var(--dark), 0.04);
+  overflow: hidden;
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+}
+@media (any-hover: hover) {
+  .thermal-card:hover .btn.btn-dark {
+    background-color: rgba(var(--primary), 1);
+  }
+}
+.thermal-card__head {
+  overflow: hidden;
+  margin-bottom: 32px;
+}
+.thermal-card__head .swiper-pagination-bullet {
+  background-color: rgba(var(--dark), 0.24);
+  opacity: 1;
+  margin: 2px !important;
+  padding: 0;
+  width: 4px;
+  height: 4px;
+}
+.thermal-card__head .swiper-pagination-bullet.swiper-pagination-bullet-active {
+  background-color: rgba(var(--primary), 1);
+  position: relative;
+}
+.thermal-card__head .swiper-pagination-bullet.swiper-pagination-bullet-active::after {
+  content: "";
+  width: 1em;
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  background-color: red;
+}
+.thermal-card__footer {
+  margin-top: auto;
+}
+.thermal-card__footer .btn {
+  width: 100%;
+  text-align: center;
+}
+.thermal-card__name {
+  font-size: 24px;
+  font-weight: 600;
+  margin-bottom: 16px;
+}
+.thermal-card__descr {
+  font-size: 16px;
+  font-weight: 400;
+  color: rgba(var(--dark), 0.6);
+  margin-bottom: 24px;
+}
+.thermal-card__table {
+  margin-bottom: 24px;
+}
+.thermal-card__row {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 12px;
+}
+.thermal-card__row:last-child {
+  margin-bottom: 0;
+}
+.thermal-card__row div:nth-child(2) {
+  flex-grow: 1;
+  border-bottom: dashed 1px rgba(var(--dark), 0.24);
+  margin: 0 5px 0.7em;
+}
+.thermal-card__row-tags {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 5px;
+  margin-left: auto;
+  justify-content: flex-end;
+}
+.thermal-card__row-tags span {
+  display: inline-block;
+  border: solid 1px rgba(var(--dark), 0.24);
+  border-radius: 30px;
+  padding: 4px 8px;
+  font-size: 14px;
+  font-weight: 400;
+}
+
+.thermal-card-slider {
+  overflow: hidden;
 }
 
 body {

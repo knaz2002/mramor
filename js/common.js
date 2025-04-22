@@ -96,7 +96,7 @@ function pauseEvent(e){
 
 
 //**** banner slider */
-const swiper = new Swiper(".banner-slider", {
+new Swiper(".banner-slider", {
   pagination: {
     el: ".swiper-pagination",
     type: "progressbar",
@@ -108,6 +108,30 @@ const swiper = new Swiper(".banner-slider", {
   },
 });
 
+
+//**** thermal-card-slider slider */
+// new Swiper(".thermal-card-slider", {
+//   pagination: {
+//     el: ".swiper-pagination",
+//   },
+//   slidesPerView: 1,
+//   loop: true,
+  
+// });
+
+new Swiper('.thermal-card-slider', {
+    pagination: {
+    el: ".swiper-pagination",
+  },
+  slidesPerView: 1,
+  loop: true,
+  on: {
+    init() {
+        this.el.addEventListener('mouseenter', () => { this.autoplay.start(); });
+        this.el.addEventListener('mouseleave', () => { this.autoplay.stop(); });
+    }
+},
+});
 
 
 
