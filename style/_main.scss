@@ -392,6 +392,12 @@
     grid-template-columns: 1fr 1fr 1fr 1fr;
     overflow: hidden;
     gap: 20px;
+    @media (max-width: 1200px) {
+      grid-template-columns: 1fr 1fr;
+    }
+    @media (max-width: 768px) {
+      grid-template-columns: 1fr;
+    }
   }
 }
 .thermal-card {
@@ -424,15 +430,17 @@
       &.swiper-pagination-bullet-active {
         background-color: rgba(var(--primary), 1);
         position: relative;
-        &::after {
-          content: "";
-          width: 1em;
-          position: absolute;
-          left: 0;
-          top: 0;
-          height: 100%;
-          background-color: red;
-        }
+        // &::after {
+        //   content: "";
+        //   width: 15px;
+        //   border-radius: 50px;
+        //   position: absolute;
+        //   left: 50%;
+        //   transform: translateX(-50%);
+        //   top: 0;
+        //   height: 100%;
+        //   background-color: rgba(var(--primary), 1);
+        // }
       }
     }
   }
@@ -472,6 +480,9 @@
         flex-grow: 1;
         border-bottom: dashed 1px rgba(var(--dark), 0.24);
         margin: 0 5px 0.7em;
+        @media (max-width: 1400px) {
+          display: none;
+        }
       }
     }
   }

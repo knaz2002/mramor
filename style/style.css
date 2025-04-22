@@ -747,6 +747,16 @@ section {
   overflow: hidden;
   gap: 20px;
 }
+@media (max-width: 1200px) {
+  .thermal__list {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+@media (max-width: 768px) {
+  .thermal__list {
+    grid-template-columns: 1fr;
+  }
+}
 
 .thermal-card {
   background-color: rgba(var(--dark), 0.04);
@@ -775,15 +785,6 @@ section {
 .thermal-card__head .swiper-pagination-bullet.swiper-pagination-bullet-active {
   background-color: rgba(var(--primary), 1);
   position: relative;
-}
-.thermal-card__head .swiper-pagination-bullet.swiper-pagination-bullet-active::after {
-  content: "";
-  width: 1em;
-  position: absolute;
-  left: 0;
-  top: 0;
-  height: 100%;
-  background-color: red;
 }
 .thermal-card__footer {
   margin-top: auto;
@@ -818,6 +819,11 @@ section {
   flex-grow: 1;
   border-bottom: dashed 1px rgba(var(--dark), 0.24);
   margin: 0 5px 0.7em;
+}
+@media (max-width: 1400px) {
+  .thermal-card__row div:nth-child(2) {
+    display: none;
+  }
 }
 .thermal-card__row-tags {
   display: flex;
