@@ -211,30 +211,30 @@ window.addEventListener("DOMContentLoaded", function () {
   });
 });
 
-// document.addEventListener("scroll", handleScroll);
-// // get a reference to our predefined button
-// let scrollToTopBtn = document.querySelector(".scrollToTopBtn");
+document.addEventListener("scroll", handleScroll);
+// get a reference to our predefined button
+let scrollToTopBtn = document.querySelector(".scrollToTopBtn");
 
-// function handleScroll() {
-//   let scrollableHeight =
-//     document.documentElement.scrollHeight -
-//     document.documentElement.clientHeight;
-//   let srollRatio = 0.2;
+function handleScroll() {
+  let scrollableHeight =
+    document.documentElement.scrollHeight -
+    document.documentElement.clientHeight;
+  let srollRatio = 0.2;
 
-//   if (document.documentElement.scrollTop / scrollableHeight > srollRatio) {
-//     //show button
-//     scrollToTopBtn.style.display = "flex";
-//   } else {
-//     //hide button
-//     scrollToTopBtn.style.display = "none";
-//   }
-// }
+  if (document.documentElement.scrollTop / scrollableHeight > srollRatio) {
+    //show button
+    scrollToTopBtn.style.display = "flex";
+  } else {
+    //hide button
+    scrollToTopBtn.style.display = "none";
+  }
+}
 
-// scrollToTopBtn.addEventListener("click", scrollToTop);
+scrollToTopBtn.addEventListener("click", scrollToTop);
 
-// function scrollToTop() {
-//   window.scrollTo({
-//     top: 0,
-//     behavior: "smooth",
-//   });
-// }
+function scrollToTop() {
+  window.scrollTo({
+    top: 0,
+    behavior: "smooth",
+  });
+}

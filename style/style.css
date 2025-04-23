@@ -104,7 +104,15 @@ h2.title {
   }
 }
 h2.title.pl {
-  padding-left: 33%;
+  padding-left: 25.5%;
+}
+@media (max-width: 1023px) {
+  h2.title.pl {
+    padding-left: 0;
+  }
+  h2.title.pl br {
+    display: none;
+  }
 }
 
 h1.title {
@@ -186,7 +194,7 @@ ul {
 
 [class*=__container] {
   width: 100%;
-  max-width: 1620px;
+  max-width: 1650px;
   margin: 0 auto;
   padding: 0 15px;
 }
@@ -340,7 +348,7 @@ section {
   width: 74px;
   height: 74px;
   border-radius: 50%;
-  background-color: rgba(var(--primary), 0.1);
+  background-color: rgba(var(--light), 1);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -355,7 +363,7 @@ section {
   }
 }
 .scrollToTopBtn svg path {
-  fill: rgb(var(--primary));
+  fill: rgba(var(--dark), 0.6);
 }
 
 .header {
@@ -368,11 +376,6 @@ section {
 .header a {
   color: rgb(var(--body));
   transition: 0.3s;
-}
-@media (any-hover: hover) {
-  .header a:hover {
-    color: rgba(var(--primary), 0.8);
-  }
 }
 .header__inner {
   display: grid;
@@ -425,6 +428,27 @@ section {
   align-items: center;
   gap: 20px;
   white-space: nowrap;
+}
+.header-nav__list a {
+  position: relative;
+  transition: 0.3s;
+  display: block;
+}
+.header-nav__list a::after {
+  content: "";
+  display: block;
+  background-color: rgb(var(--light));
+  height: 1px;
+  width: 0%;
+  transition: 0.5s;
+  transform: translateX(-50%);
+  position: absolute;
+  left: 50%;
+}
+@media (any-hover: hover) {
+  .header-nav__list a:hover::after, .header-nav__list a:hover::before {
+    width: 100%;
+  }
 }
 
 .banner {
@@ -764,8 +788,13 @@ section {
   padding: 16px;
   display: flex;
   flex-direction: column;
+  cursor: pointer;
+  transition: 0.3s;
 }
 @media (any-hover: hover) {
+  .thermal-card:hover {
+    background-color: rgba(var(--dark), 0.07);
+  }
   .thermal-card:hover .btn.btn-dark {
     background-color: rgba(var(--primary), 1);
   }

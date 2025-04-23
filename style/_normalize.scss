@@ -34,7 +34,13 @@ h2.title {
     font-size: 24px;
   }
   &.pl {
-    padding-left: 33%;
+    padding-left: 25.5%;
+    @media (max-width: 1023px) {
+      padding-left: 0;
+      br {
+        display: none;
+      }
+    }
   }
 }
 h1.title {
@@ -140,7 +146,7 @@ ul {
 }
 [class*="__container"] {
   width: 100%;
-  max-width: 1620px;
+  max-width: 1650px;
   margin: 0 auto;
   padding: 0 15px;
 }
@@ -351,7 +357,7 @@ section {
   width: 74px;
   height: 74px;
   border-radius: 50%;
-  background-color: rgba(var(--primary), 0.1);
+  background-color: rgba(var(--light), 1);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -368,7 +374,7 @@ section {
     //transform: rotate(-90deg);
 
     path {
-      fill: rgb(var(--primary));
+      fill: rgba(var(--dark), 0.6);
     }
   }
 }

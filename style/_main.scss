@@ -7,11 +7,6 @@
   a {
     color: rgb(var(--body));
     transition: 0.3s;
-    &:hover {
-      @media (any-hover: hover) {
-        color: rgba(var(--primary), 0.8);
-      }
-    }
   }
   &__inner {
     display: grid;
@@ -67,6 +62,30 @@
     align-items: center;
     gap: 20px;
     white-space: nowrap;
+    a {
+      position: relative;
+      transition: 0.3s;
+      display: block;
+      &::after {
+        content: "";
+        display: block;
+        background-color: rgb(var(--light));
+        height: 1px;
+        width: 0%;
+        transition: 0.5s;
+        transform: translateX(-50%);
+        position: absolute;
+        left: 50%;
+      }
+      &:hover {
+        @media (any-hover: hover) {
+          &::after,
+          &::before {
+            width: 100%;
+          }
+        }
+      }
+    }
   }
 }
 .banner {
@@ -406,8 +425,11 @@
   padding: 16px;
   display: flex;
   flex-direction: column;
+  cursor: pointer;
+  transition: 0.3s;
   &:hover {
     @media (any-hover: hover) {
+      background-color: rgba(var(--dark), 0.07);
       .btn.btn-dark {
         background-color: rgba(var(--primary), 1);
       }
