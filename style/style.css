@@ -781,10 +781,11 @@ section {
   padding: 0;
   width: 4px;
   height: 4px;
+  transition: 0.3s;
 }
 .thermal-card__head .swiper-pagination-bullet.swiper-pagination-bullet-active {
-  background-color: rgba(var(--primary), 1);
-  position: relative;
+  background: rgba(var(--primary), 1);
+  transition: 0.3s;
 }
 .thermal-card__footer {
   margin-top: auto;
