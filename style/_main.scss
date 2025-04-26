@@ -484,34 +484,98 @@
     // align-items: center;
     justify-content: space-between;
     margin-bottom: 12px;
+    position: relative;
     &:last-child {
       margin-bottom: 0;
     }
     div {
+      position: relative;
+      &:first-child {
+        padding-left: 30px;
+      }
       &:nth-child(2) {
         flex-grow: 1;
         border-bottom: dashed 1px rgba(var(--dark), 0.24);
         margin: 0 5px 0.7em;
-        @media (max-width: 1400px) {
-          display: none;
-        }
+        height: 18px;
+        // @media (max-width: 1400px) {
+        //   display: none;
+        // }
       }
     }
   }
+  &__size {
+    &::after {
+      content: "";
+      display: block;
+      background-image: url("../img/icons/item1.svg");
+      background-position: 50% 50%;
+      background-repeat: no-repeat;
+      width: 24px;
+      height: 24px;
+      position: absolute;
+      left: 0;
+      top: 0;
+    }
+  }
+  &__thickness {
+    &::after {
+      content: "";
+      display: block;
+      background-image: url("../img/icons/item2.svg");
+      background-position: 50% 50%;
+      background-repeat: no-repeat;
+      width: 24px;
+      height: 24px;
+      position: absolute;
+      left: 0;
+      top: 0;
+    }
+  }
+  &__weight {
+    &::after {
+      content: "";
+      display: block;
+      background-image: url("../img/icons/item3.svg");
+      background-position: 50% 50%;
+      background-repeat: no-repeat;
+      width: 24px;
+      height: 24px;
+      position: absolute;
+      left: 0;
+      top: 0;
+    }
+  }
+  &__base {
+    &::after {
+      content: "";
+      display: block;
+      background-image: url("../img/icons/item4.svg");
+      background-position: 50% 50%;
+      background-repeat: no-repeat;
+      width: 24px;
+      height: 24px;
+      position: absolute;
+      left: 0;
+      top: 0;
+    }
+  }
   &__row-tags {
-    display: flex;
-    align-items: center;
-    flex-wrap: wrap;
-    gap: 5px;
-    margin-left: auto;
-    justify-content: flex-end;
+    // display: flex;
+    // align-items: center;
+    // flex-wrap: wrap;
+    // gap: 5px;
+    // margin-left: auto;
+    // justify-content: flex-end;
     span {
-      display: inline-block;
+      display: block;
       border: solid 1px rgba(var(--dark), 0.24);
       border-radius: 30px;
       padding: 4px 8px;
       font-size: 14px;
       font-weight: 400;
+      margin: 5px;
+      text-align: center;
     }
   }
 }
