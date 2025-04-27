@@ -1019,3 +1019,16 @@
     }
   }
 }
+
+.faq {
+  &__title {
+    text-align: center;
+  }
+  &__inner {
+    max-width: 50%;
+    margin: 0 auto;
+    @media (max-width: 1023px) {
+      max-width: 100%;
+    }
+  }
+}
