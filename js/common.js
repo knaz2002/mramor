@@ -196,9 +196,20 @@ document.addEventListener("click", function (event) {
 
 
 /****accordions */
-// const accordion = document.querySelectorAll(".accordion-modern");
-// const accordion2 = document.querySelectorAll(".accordion-work");
-// const accordion3 = document.querySelectorAll(".accordion-faq");
+const accordions = document.querySelectorAll(".accordion__item");
+accordions.forEach((accordion) => {
+  const accordionHead = accordion.querySelector(".accordion__name");
+  const accordionBody = accordion.querySelector(".accordion__content");
+  accordionHead.addEventListener("click", () => {
+    // accordions.forEach((otherAccordion) => {
+    //   if (otherAccordion !== accordion) {
+    //     otherAccordion.querySelector(".accordion__content").classList.remove("active");
+    //   }
+    // });
+    accordionHead.classList.toggle("active");
+    accordionBody.classList.toggle("active");
+  });
+});
 
 window.addEventListener("DOMContentLoaded", function () {
   [].forEach.call(document.querySelectorAll(".phone-input"), function (input) {
