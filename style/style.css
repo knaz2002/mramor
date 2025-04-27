@@ -228,6 +228,16 @@ ul {
 section {
   margin: 0 0 128px;
 }
+@media (max-width: 1023px) {
+  section {
+    margin: 0 0 80px;
+  }
+}
+@media (max-width: 1023px) {
+  section {
+    margin: 0 0 52px;
+  }
+}
 
 .btn {
   display: inline-block;
@@ -391,6 +401,7 @@ section {
   box-shadow: 0 0 4px rgba(0, 0, 0, 0.5);
   opacity: 0.6;
   transition: 0.3s;
+  z-index: 50;
 }
 @media (any-hover: hover) {
   .scrollToTopBtn:hover {
@@ -646,6 +657,27 @@ section {
   justify-content: center;
   gap: 15px;
 }
+.header-mobile__btns a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.header-mobile__btns a svg {
+  flex: 0 0 24px;
+}
+@media (max-width: 370px) {
+  .header-mobile__btns {
+    flex-wrap: wrap;
+  }
+  .header-mobile__btns button {
+    flex: 0 0 100%;
+    height: 56px !important;
+  }
+  .header-mobile__btns a {
+    flex: 0 0 56px;
+    height: 56px !important;
+  }
+}
 .header-mobile__btns button,
 .header-mobile__btns a {
   height: 100%;
@@ -695,18 +727,44 @@ section {
   height: 100vh;
   position: relative;
 }
+@media (max-width: 767px) {
+  .banner__inner {
+    padding-top: 50%;
+  }
+}
 .banner__title {
   max-width: 50%;
+}
+@media (max-width: 1200px) {
+  .banner__title {
+    max-width: 100%;
+  }
 }
 .banner__subtitle {
   margin: 24px 0 40px;
   max-width: 50%;
+}
+@media (max-width: 1200px) {
+  .banner__subtitle {
+    max-width: 100%;
+  }
 }
 .banner__btns {
   display: flex;
   align-items: center;
   gap: 16px;
   margin-bottom: 20px;
+}
+@media (max-width: 575px) {
+  .banner__btns {
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+}
+@media (max-width: 575px) {
+  .banner__btns button {
+    width: 100%;
+  }
 }
 .banner__tags {
   margin-top: auto;

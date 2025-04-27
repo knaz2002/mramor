@@ -173,6 +173,12 @@ ul {
 }
 section {
   margin: 0 0 128px;
+  @media (max-width: 1023px) {
+    margin: 0 0 80px;
+  }
+  @media (max-width: 1023px) {
+    margin: 0 0 52px;
+  }
   // margin: 128px 0;
   // &:first-child {
   //   margin-top: 12px;
@@ -397,6 +403,7 @@ section {
   box-shadow: 0 0 4px rgba(0, 0, 0, 0.5);
   opacity: 0.6;
   transition: 0.3s;
+  z-index: 50;
   &:hover {
     @media (any-hover: hover) {
       opacity: 1;

@@ -188,31 +188,7 @@ document.addEventListener("click", function (event) {
 
 
 
-// cardSlider.autoplay.stop();
-// console.log(cardSlider)
-
-// const buttonSelect = document.querySelector(".js-menu");
-// const menuSelect = document.querySelector(".js-menu-drop");
-// const bodyLock = document.querySelector("body");
-
-// //---toggle burger
-// buttonSelect.addEventListener("click", function () {
-//   buttonSelect.classList.toggle("active");
-//   menuSelect.classList.toggle("active");
-//   bodyLock.classList.toggle("lock");
-// });
-
-// //---click outside
-// document.addEventListener("click", function (event) {
-//   const clickInside = event.composedPath().includes(buttonSelect);
-//   if (!clickInside && !buttonSelect.contains(event.target)) {
-//     buttonSelect.classList.remove("active");
-//     menuSelect.classList.remove("active");
-//     bodyLock.classList.remove("lock");
-//   }
-// });
-
-//---accordions
+/****accordions */
 // const accordion = document.querySelectorAll(".accordion-modern");
 // const accordion2 = document.querySelectorAll(".accordion-work");
 // const accordion3 = document.querySelectorAll(".accordion-faq");
