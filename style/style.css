@@ -1366,6 +1366,58 @@ section {
   bottom: 0px;
 }
 
+.computation__inner {
+  background-image: url("../img/banner-second.webp");
+  background-repeat: no-repeat;
+  background-position: 50% 50%;
+  background-size: cover;
+  text-align: center;
+  color: rgb(var(--light));
+  border-radius: 4px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 6% 0 13%;
+}
+@media (max-width: 767px) {
+  .computation__inner {
+    background-position: 0 50%;
+  }
+}
+.computation__title {
+  max-width: 50%;
+  margin: 65px auto 40px;
+  padding: 0 16px;
+}
+@media (max-width: 1200px) {
+  .computation__title {
+    max-width: 90%;
+  }
+}
+@media (max-width: 767px) {
+  .computation__title {
+    margin: 40px auto 32px;
+  }
+}
+.computation__btns {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  justify-content: center;
+  padding: 0 16px;
+}
+@media (max-width: 575px) {
+  .computation__btns {
+    flex-wrap: wrap;
+  }
+  .computation__btns button {
+    flex: 0 0 100%;
+    max-width: 100%;
+  }
+}
+
 body {
   font-family: var(--ff);
   font-weight: 400;

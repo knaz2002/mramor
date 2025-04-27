@@ -133,7 +133,16 @@ let gallerySlider = new Swiper(".gallery-slider", {
   },
   autoplay: {
     delay: 3000,
+    speed: 1000,
   },
+  // effect: 'cards',
+  // coverflowEffect: {
+  //   rotate: 50,
+  //   stretch: 0,
+  //   depth: 100,
+  //   modifier: 1,
+  //   slideShadows: true,
+  // },
 });
 
 
