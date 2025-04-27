@@ -1,5 +1,7 @@
 "use strict";
 
+
+
 //***** switch slider */
 const slider = document.getElementById("switch-slider");
 const before = document.getElementById("switch-slider-before");
@@ -162,6 +164,27 @@ cardSlider.forEach(slider => {
   slider.autoplay.stop();
 });
 
+
+/****burger */
+const burger = document.querySelector(".js-burger");
+const menu = document.querySelector(".header-mobile");
+const bodyLock = document.querySelector("body");
+
+burger.addEventListener("click", () => {
+  console.log('click')
+  burger.classList.toggle("active");
+  menu.classList.toggle("active");
+  bodyLock.classList.toggle("lock");
+})
+//---click outside
+document.addEventListener("click", function (event) {
+  const clickInside = event.composedPath().includes(burger);
+  if (!clickInside && !burger.contains(event.target)) {
+    burger.classList.remove("active");
+    menu.classList.remove("active");
+    bodyLock.classList.remove("lock");
+  }
+});
 
 
 
