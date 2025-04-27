@@ -106,9 +106,13 @@ new Swiper(".banner-slider", {
 });
 
 //*** gallery slider */
-new Swiper(".gallery-slider", {
-  loop: false,
+let gallerySlider = new Swiper(".gallery-slider", {
+  loop: true,
   spaceBetween: 20,
+  // mousewheel: {
+  //   enabled: true,
+  //   sensitivity: 4,
+  // },
   pagination: {
     el: ".swiper-pagination",
     dynamicBullets: true,
@@ -127,18 +131,12 @@ new Swiper(".gallery-slider", {
       slidesPerView: 4,
     },
   },
-
+  autoplay: {
+    delay: 3000,
+  },
 });
 
-//**** thermal-card-slider slider */
-// new Swiper(".thermal-card-slider", {
-//   pagination: {
-//     el: ".swiper-pagination",
-//   },
-//   slidesPerView: 1,
-//   loop: true,
 
-// });
 
 let cardSlider = new Swiper(".thermal-card-slider", {
   pagination: {
