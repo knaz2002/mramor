@@ -103,6 +103,31 @@ new Swiper(".banner-slider", {
   },
 });
 
+//*** gallery slider */
+new Swiper(".gallery-slider", {
+  loop: false,
+  spaceBetween: 20,
+  pagination: {
+    el: ".swiper-pagination",
+    dynamicBullets: true,
+  },
+  breakpoints: {
+    0: {
+      slidesPerView: 1,
+    },
+    768: {
+      slidesPerView: 2,
+    },
+    992: {
+      slidesPerView: 3,
+    },
+    1200: {
+      slidesPerView: 4,
+    },
+  },
+
+});
+
 //**** thermal-card-slider slider */
 // new Swiper(".thermal-card-slider", {
 //   pagination: {
