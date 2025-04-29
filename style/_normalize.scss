@@ -332,52 +332,58 @@ section {
     }
   }
 }
-// .form-radio {
-//   &__label {
-//     background-color: #fff;
-//     padding: 13px 16px;
-//     color: var(--color_text);
-//     font-size: 16px;
-//     font-weight: 400;
-//     border-radius: 4px;
-//     display: flex;
-//     gap: 10px;
-//     cursor: pointer;
-//   }
-//   &__input {
-//     appearance: none;
-//     opacity: 0;
-//     position: absolute;
-//     left: 0;
-//   }
-//   &__checked {
-//     display: flex;
-//     justify-content: center;
-//     align-items: center;
-//     width: 24px;
-//     flex: 0 0 24px;
-//     height: 24px;
-//     border-radius: 50%;
-//     border: solid 1px rgba(var(--primary), 1);
-//     &::after {
-//       content: "";
-//       display: block;
-//       width: 12px;
-//       height: 12px;
-//       background-color: rgba(var(--primary), 1);
-//       border-radius: 50%;
-//       transition: 0.3s;
-//       opacity: 0;
-//     }
-//   }
-//   &__input:checked + .form-radio__checked {
-//     &::after {
-//       opacity: 1;
-//     }
-//   }
-//   &__name {
-//   }
-// }
+
+.form-checkbox {
+  &__label {
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+  }
+  &__input {
+    opacity: 0;
+    position: absolute;
+    appearance: none;
+  }
+  &__checked {
+    display: block;
+    width: 24px;
+    height: 24px;
+    flex: 0 0 24px;
+    border: solid 1px rgba(var(--dark), 0.4);
+    border-radius: 4px;
+    transition: 0.3s;
+    //background-color: rgba(var(--dark), 1);
+    position: relative;
+    &::after {
+      content: "";
+      background-image: url("/img/checked.svg");
+      background-repeat: no-repeat;
+      background-position: center;
+      display: block;
+      width: 16px;
+      height: 16px;
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+      transition: 0.3s;
+      opacity: 0;
+    }
+  }
+  &__content {
+    a {
+      color: rgb(var(--primary));
+    }
+  }
+  &__input:checked + &__checked {
+    background-color: rgba(var(--dark), 1);
+    border-color: transparent;
+    &::after {
+      opacity: 1;
+    }
+  }
+}
 
 .scrollToTopBtn {
   position: fixed;
