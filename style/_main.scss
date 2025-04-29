@@ -1035,7 +1035,6 @@
 
 .contact {
   background-color: rgb(var(--grey));
-  padding: 0 0 24px;
   margin-bottom: 0;
 
   &__inner {
@@ -1043,8 +1042,54 @@
     grid-template-columns: auto 390px;
     gap: 20px;
     border-bottom: solid 1px rgb(var(--dark), 0.24);
-    padding-bottom: 24px;
-    padding: 64px 0 40px;
+    padding-top: 64px;
+    padding-bottom: 40px;
+  }
+}
+.contact-form {
+  background-color: rgb(var(--light));
+  padding: 16px;
+  border-radius: 4px;
+  input {
+    width: 100%;
+    border: solid 1px rgb(var(--dark), 0.24);
+    height: 50px;
+    line-height: 50px;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    padding: 16px;
+    border-radius: 4px;
+    outline: none;
+    transition: 0.3s;
+    &::placeholder {
+      color: rgb(var(--dark), 0.24);
+    }
+    &:focus {
+      box-shadow: 0 0 2px rgba(var(--primary), 0.8);
+    }
+    &:hover {
+      @media (any-hover: hover) {
+        border-color: rgb(var(--primary));
+      }
+    }
+  }
+  &__inputs {
+    margin-bottom: 16px;
+  }
+  &__label {
+    margin-bottom: 16px;
+    display: block;
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+  &__checkbox {
+    margin-bottom: 24px;
+  }
+  &__send {
+    button {
+      width: 100%;
+    }
   }
 }
 
