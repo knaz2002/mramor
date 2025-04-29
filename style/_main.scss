@@ -1033,6 +1033,21 @@
   }
 }
 
+.contact {
+  background-color: rgb(var(--grey));
+  padding: 0 0 24px;
+  margin-bottom: 0;
+
+  &__inner {
+    display: grid;
+    grid-template-columns: auto 390px;
+    gap: 20px;
+    border-bottom: solid 1px rgb(var(--dark), 0.24);
+    padding-bottom: 24px;
+    padding: 64px 0 40px;
+  }
+}
+
 .footer {
   padding: 24px 0;
   font-size: 14px;

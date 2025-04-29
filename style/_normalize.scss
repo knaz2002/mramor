@@ -163,6 +163,7 @@ ul {
   display: inline-block;
 }
 section {
+  display: block;
   margin: 0 0 128px;
   @media (max-width: 1023px) {
     margin: 0 0 80px;
@@ -170,16 +171,6 @@ section {
   @media (max-width: 1023px) {
     margin: 0 0 52px;
   }
-  // margin: 128px 0;
-  // &:first-child {
-  //   margin-top: 12px;
-  // }
-  // &:last-child {
-  //   margin: 60px 0;
-  // }
-  // @media (max-width: 1023px) {
-  //   margin: 100px auto;
-  // }
 }
 
 .btn {
