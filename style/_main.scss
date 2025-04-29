@@ -1032,3 +1032,35 @@
     }
   }
 }
+
+.footer {
+  margin-bottom: 20px;
+  font-size: 14px;
+  &__wrap {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }
+  &__left {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+  }
+  &__right {
+    color: rgba(var(--dark), 0.6);
+    transition: 0.3s;
+    &:hover {
+      @media (any-hover: hover) {
+        color: rgba(var(--dark), 1);
+      }
+    }
+  }
+  &__logo {
+  }
+  &__info {
+    color: rgba(var(--dark), 0.6);
+    p {
+    }
+  }
+}

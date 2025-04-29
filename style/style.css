@@ -1460,6 +1460,33 @@ section {
   }
 }
 
+.footer {
+  margin-bottom: 20px;
+  font-size: 14px;
+}
+.footer__wrap {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+.footer__left {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+}
+.footer__right {
+  color: rgba(var(--dark), 0.6);
+  transition: 0.3s;
+}
+@media (any-hover: hover) {
+  .footer__right:hover {
+    color: rgba(var(--dark), 1);
+  }
+}
+.footer__info {
+  color: rgba(var(--dark), 0.6);
+}
 body {
   font-family: var(--ff);
   font-weight: 400;
