@@ -304,14 +304,14 @@ document.querySelector(".js-callback-form").addEventListener("submit", function 
         modalTitle.innerHTML = 'Данные отправлены!';
         modalInfo.innerHTML = 'Мы свяжемся с Вами в ближайшее время.';
         modalForm.classList.add("modal-open");
-        bodyLock.classList.add("modal-open");
+        bodyLock.classList.add("lock");
         form.reset();
       } else {
         console.log(data.message);
       }
     })
     .catch((error) => {
-      // console.error('Error:', error);
+      console.error('Error:', error);
       console.log(
         "Произошла ошибка при отправке сообщения. Пожалуйста, попробуйте позже.2"
       );
