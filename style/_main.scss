@@ -1107,8 +1107,10 @@
     margin-bottom: 24px;
   }
   &__send {
-    button {
+    button,
+    input {
       width: 100%;
+      line-height: 0;
     }
   }
 }

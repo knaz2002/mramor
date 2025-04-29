@@ -1581,8 +1581,10 @@ section {
 .contact-form__checkbox {
   margin-bottom: 24px;
 }
-.contact-form__send button {
+.contact-form__send button,
+.contact-form__send input {
   width: 100%;
+  line-height: 0;
 }
 
 .footer {
