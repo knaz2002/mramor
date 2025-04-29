@@ -1517,6 +1517,25 @@ section {
   padding-top: 64px;
   padding-bottom: 40px;
 }
+@media (max-width: 1300px) {
+  .contact__inner.pl {
+    padding-left: 0;
+  }
+}
+@media (max-width: 1023px) {
+  .contact__inner {
+    grid-template-columns: 1fr;
+  }
+}
+.contact__item .title {
+  margin-bottom: 0;
+}
+.contact__item:first-child {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  justify-content: space-between;
+}
 
 .contact-form {
   background-color: rgb(var(--light));

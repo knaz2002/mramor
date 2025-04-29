@@ -280,3 +280,40 @@ function scrollToTop() {
     behavior: "smooth",
   });
 }
+
+
+//---Форма обратной связи
+document.querySelector(".js-callback-form").addEventListener("submit", function (e) {
+  e.preventDefault();
+
+  const form = this.closest("form");
+  const formData = new FormData(form);
+
+  // Get form values
+  formData.append("name", form.querySelector('input[type="text"]').value);
+  formData.append("phone", form.querySelector('input[type="tel"]').value);
+  // formData.append("message", form.querySelector("textarea").value);
+
+  fetch("../mailer.php", {
+    method: "POST",
+    body: formData,
+  })
+    .then((response) => response.json())
+    .then((data) => {
+      if (data.success) {
+        modalTitle.innerHTML = 'Данные отправлены!';
+        modalInfo.innerHTML = 'Мы свяжемся с Вами в ближайшее время.';
+        modalForm.classList.add("modal-open");
+        bodyLock.classList.add("modal-open");
+        form.reset();
+      } else {
+        console.log(data.message);
+      }
+    })
+    .catch((error) => {
+      // console.error('Error:', error);
+      console.log(
+        "Произошла ошибка при отправке сообщения. Пожалуйста, попробуйте позже.2"
+      );
+    });
+});
