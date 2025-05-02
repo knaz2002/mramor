@@ -795,7 +795,6 @@ section {
   background-position: center center;
   background-repeat: no-repeat;
   background-position: cover;
-  height: 100vh;
   color: rgb(var(--body));
   position: relative;
 }
@@ -803,7 +802,7 @@ section {
   padding-top: 18%;
   display: flex;
   flex-direction: column;
-  height: 100vh;
+  padding-bottom: 15%;
   position: relative;
 }
 @media (max-width: 767px) {
@@ -1508,6 +1507,7 @@ section {
 .contact {
   background-color: rgb(var(--grey));
   margin-bottom: 0;
+  overflow-x: hidden;
 }
 .contact__inner {
   display: grid;
@@ -1516,13 +1516,14 @@ section {
   border-bottom: solid 1px rgb(var(--dark), 0.24);
   padding-top: 64px;
   padding-bottom: 40px;
+  overflow-x: hidden;
 }
 @media (max-width: 1300px) {
   .contact__inner.pl {
     padding-left: 0;
   }
 }
-@media (max-width: 1023px) {
+@media (max-width: 1200px) {
   .contact__inner {
     grid-template-columns: 1fr;
   }
@@ -1541,6 +1542,22 @@ section {
   background-color: rgb(var(--light));
   padding: 16px;
   border-radius: 4px;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-areas: "a" "b" "c" "d";
+  gap: 16px;
+}
+@media (max-width: 1200px) {
+  .contact-form {
+    grid-template-areas: "a b d" "c c c";
+    grid-template-columns: 1fr 1fr;
+  }
+}
+@media (max-width: 767px) {
+  .contact-form {
+    grid-template-columns: 1fr;
+    grid-template-areas: "a" "b" "c" "d";
+  }
 }
 .contact-form input {
   width: 100%;
@@ -1572,19 +1589,25 @@ section {
   margin-bottom: 16px;
 }
 .contact-form__label {
-  margin-bottom: 16px;
   display: block;
-}
-.contact-form__label:last-child {
-  margin-bottom: 0;
-}
-.contact-form__checkbox {
-  margin-bottom: 24px;
 }
 .contact-form__send button,
 .contact-form__send input {
   width: 100%;
   line-height: 0;
+}
+.contact-form__item:nth-child(1) {
+  grid-area: a;
+}
+.contact-form__item:nth-child(2) {
+  grid-area: b;
+}
+.contact-form__item:nth-child(3) {
+  grid-area: c;
+  margin-bottom: 4px;
+}
+.contact-form__item:nth-child(4) {
+  grid-area: d;
 }
 
 .footer {
@@ -1623,6 +1646,7 @@ body {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
+  overflow-x: hidden;
 }
 body.lock {
   overflow-y: hidden;

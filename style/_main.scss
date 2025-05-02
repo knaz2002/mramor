@@ -311,7 +311,7 @@
   background-position: center center;
   background-repeat: no-repeat;
   background-position: cover;
-  height: 100vh;
+  // height: 100vh;
   color: rgb(var(--body));
   position: relative;
 
@@ -319,7 +319,8 @@
     padding-top: 18%;
     display: flex;
     flex-direction: column;
-    height: 100vh;
+    // height: 100vh;
+    padding-bottom: 15%;
     position: relative;
     @media (max-width: 767px) {
       padding-top: 50%;
@@ -1036,7 +1037,7 @@
 .contact {
   background-color: rgb(var(--grey));
   margin-bottom: 0;
-
+  overflow-x: hidden;
   &__inner {
     display: grid;
     grid-template-columns: auto 390px;
@@ -1044,13 +1045,15 @@
     border-bottom: solid 1px rgb(var(--dark), 0.24);
     padding-top: 64px;
     padding-bottom: 40px;
+    overflow-x: hidden;
     @media (max-width: 1300px) {
       // grid-template-columns: 1fr;
       &.pl {
         padding-left: 0;
       }
     }
-    @media (max-width: 1023px) {
+
+    @media (max-width: 1200px) {
       grid-template-columns: 1fr;
     }
   }
@@ -1070,6 +1073,18 @@
   background-color: rgb(var(--light));
   padding: 16px;
   border-radius: 4px;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-areas: "a" "b" "c" "d";
+  gap: 16px;
+  @media (max-width: 1200px) {
+    grid-template-areas: "a b d" "c c c";
+    grid-template-columns: 1fr 1fr;
+  }
+  @media (max-width: 767px) {
+    grid-template-columns: 1fr;
+    grid-template-areas: "a" "b" "c" "d";
+  }
   input {
     width: 100%;
     border: solid 1px rgb(var(--dark), 0.24);
@@ -1097,20 +1112,31 @@
     margin-bottom: 16px;
   }
   &__label {
-    margin-bottom: 16px;
     display: block;
-    &:last-child {
-      margin-bottom: 0;
-    }
   }
   &__checkbox {
-    margin-bottom: 24px;
   }
   &__send {
     button,
     input {
       width: 100%;
       line-height: 0;
+    }
+  }
+
+  &__item {
+    &:nth-child(1) {
+      grid-area: a;
+    }
+    &:nth-child(2) {
+      grid-area: b;
+    }
+    &:nth-child(3) {
+      grid-area: c;
+      margin-bottom: 4px;
+    }
+    &:nth-child(4) {
+      grid-area: d;
     }
   }
 }

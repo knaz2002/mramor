@@ -363,7 +363,5 @@ document.querySelector(".js-callback-form").addEventListener("submit", function 
       console.error('Error:', error);
       modalTitle.innerHTML = 'Ошибка!';
       modalInfo.innerHTML = 'Произошла ошибка при отправке сообщения. Пожалуйста, попробуйте позже.';
-      modalForm.classList.add("modal-open");
-      bodyLock.classList.add("lock");
     });
 });
