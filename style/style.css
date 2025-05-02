@@ -506,6 +506,52 @@ section {
   fill: rgba(var(--dark), 0.6);
 }
 
+.range-slider {
+  width: 100%;
+}
+.range-slider__way {
+  height: 4px;
+  width: 100%;
+  border-radius: 50px;
+  background-color: rgba(var(--dark), 0.24);
+  display: block;
+  position: relative;
+}
+.range-slider__thumb {
+  width: 20px;
+  height: 20px;
+  background-color: #333;
+  border-radius: 50%;
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+  cursor: pointer;
+}
+.range-slider__thumb::after {
+  content: "";
+  display: block;
+  width: 0.5em;
+  height: 0.5em;
+  background-color: rgba(var(--primary));
+  border-radius: 50%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.range-slider__thumb:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 100%;
+  background-color: #666;
+  border-radius: 10px;
+  transition: width 0.2s ease-in-out;
+}
+
 .header {
   position: absolute;
   left: 0;
@@ -1479,7 +1525,6 @@ section {
   width: 100%;
   margin: 0 auto;
   border-radius: 4px;
-  border: solid 1px red;
   overflow: hidden;
 }
 @media (max-width: 1200px) {
@@ -1497,7 +1542,7 @@ section {
   grid-template-columns: 1fr 0.5fr;
   gap: 20px;
 }
-@media (max-width: 767px) {
+@media (max-width: 1200px) {
   .quiz-step__inner {
     grid-template-columns: 1fr;
   }
@@ -1530,12 +1575,30 @@ section {
   margin-top: auto;
   display: flex;
   align-items: center;
+  gap: 5px;
   justify-content: space-between;
+}
+@media (max-width: 575px) {
+  .quiz-content__footer {
+    flex-wrap: wrap;
+  }
 }
 .quiz-content__footer .btn {
   display: flex;
   align-items: center;
   gap: 10px;
+}
+@media (max-width: 575px) {
+  .quiz-content__footer .btn {
+    flex: 0 0 100%;
+    justify-content: center;
+  }
+  .quiz-content__footer .btn:first-child {
+    order: 2;
+  }
+  .quiz-content__footer .btn:last-child {
+    order: 1;
+  }
 }
 .quiz-content__footer .btn.btn-disabled {
   background-color: #fff;
@@ -1591,6 +1654,31 @@ section {
   margin-bottom: 24px;
 }
 
+.range-slider {
+  position: relative;
+}
+.range-slider__inputs {
+  display: flex;
+  flex-direction: column;
+}
+.range-slider__write {
+  position: relative;
+  font-size: 20px;
+  line-height: 100%;
+  padding: 5px;
+  max-width: 90px;
+  color: rgba(var(--primary), 1);
+}
+.range-slider__write input {
+  width: 100%;
+  color: rgba(var(--primary), 1);
+  outline: none;
+  border: none;
+}
+.range-slider__write span {
+  position: absolute;
+  right: 0;
+}
 .computation__inner {
   background-image: url("../img/banner-second.webp");
   background-repeat: no-repeat;

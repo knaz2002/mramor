@@ -420,3 +420,49 @@ section {
     }
   }
 }
+
+.range-slider {
+  width: 100%;
+  &__way {
+    height: 4px;
+    width: 100%;
+    border-radius: 50px;
+    background-color: rgba(var(--dark), 0.24);
+    display: block;
+    position: relative;
+  }
+  &__thumb {
+    width: 20px;
+    height: 20px;
+    background-color: #333;
+    border-radius: 50%;
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+    cursor: pointer;
+    &::after {
+      content: "";
+      display: block;
+      width: 0.5em;
+      height: 0.5em;
+      background-color: rgba(var(--primary));
+      border-radius: 50%;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+    &:before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 0;
+      height: 100%;
+      background-color: #666;
+      border-radius: 10px;
+      transition: width 0.2s ease-in-out;
+    }
+  }
+}

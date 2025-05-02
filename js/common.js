@@ -234,6 +234,59 @@ function showQuestion(questionIndex) {
 showQuestion(0);
 
 
+/****rangeSlider */
+
+const rangeSlider = document.querySelector('.range-slider');
+const thumb = document.querySelector('.range-slider__thumb');
+const amount = document.querySelector('#amount');
+
+let isDown = false;
+let startX;
+let scrollLeft;
+
+document.querySelector('.range-slider__way').addEventListener('mousedown', (e) => {
+  isDown = true;
+  startX = e.clientX;
+  scrollLeft = thumb.offsetLeft;
+});
+
+document.addEventListener('mouseup', () => {
+  isDown = false;
+});
+
+document.addEventListener('input', (e) => {
+  if (e.target === amount) {
+    amount.value = amount.value.replace(/[^0-9]/g, '');
+  }
+});
+
+
+amount.addEventListener('input', (e) => {
+  const value = parseInt(amount.value);
+  if (value > 500) {
+    amount.value = 500;
+  }
+  const maxLeft = rangeSlider.offsetWidth - thumb.offsetWidth;
+  const newLeft = (value / 500) * maxLeft;
+  thumb.style.left = `${newLeft}px`;;
+});
+
+document.addEventListener('mousemove', (e) => {
+  if (!isDown) return;
+  e.preventDefault();
+  const x = e.clientX;
+  const walk = x - startX;
+  const maxLeft = rangeSlider.offsetWidth - thumb.offsetWidth;
+  const newLeft = Math.min(Math.max(scrollLeft + walk, 0), maxLeft);
+  thumb.style.left = `${newLeft}px`;
+  amount.value = `${Math.round((newLeft / maxLeft) * 500)}м²`;
+  const fillWidth = (newLeft / maxLeft) * 100;
+  document.querySelector('.range-slider__way::before').style.width = `${fillWidth}%`;
+  const color = `hsl(${fillWidth}, 100%, 50%)`;
+  document.querySelector('.range-slider__way').style.background = color;
+});
+
+
 /****accordions */
 const accordions = document.querySelectorAll(".accordion__item");
 accordions.forEach((accordion) => {
