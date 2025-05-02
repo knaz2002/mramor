@@ -106,7 +106,7 @@ new Swiper(".banner-slider", {
 });
 
 //*** gallery slider */
-let gallerySlider = new Swiper(".gallery-slider", {
+new Swiper(".gallery-slider", {
   loop: true,
   spaceBetween: 20,
   // mousewheel: {
@@ -193,6 +193,45 @@ document.addEventListener("click", function (event) {
   }
 });
 
+
+/****quiz */
+const quizQuestions = document.querySelectorAll('.quiz-step');
+const nextButtons = document.querySelectorAll('.quiz-step__next');
+const backButtons = document.querySelectorAll('.quiz-step__back');
+
+let currentQuestion = 0;
+
+nextButtons.forEach((button) => {
+  button.addEventListener('click', (e) => {
+    e.preventDefault();
+    if (currentQuestion < quizQuestions.length - 1) {
+      currentQuestion++;
+    }
+    showQuestion(currentQuestion);
+  });
+});
+
+backButtons.forEach((button) => {
+  button.addEventListener('click', (e) => {
+    e.preventDefault();
+    if (currentQuestion > 0) {
+      currentQuestion--;
+    }
+    showQuestion(currentQuestion);
+  });
+});
+
+function showQuestion(questionIndex) {
+  quizQuestions.forEach((question, index) => {
+    if (index === questionIndex) {
+      question.style.display = 'block';
+    } else {
+      question.style.display = 'none';
+    }
+  });
+}
+
+showQuestion(0);
 
 
 /****accordions */

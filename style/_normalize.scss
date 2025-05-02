@@ -164,13 +164,12 @@ ul {
 }
 section {
   display: block;
-  overflow-x: hidden;
-  margin: 0 0 128px;
+  margin-bottom: 128px;
   @media (max-width: 1023px) {
-    margin: 0 0 80px;
+    margin-bottom: 80px;
   }
   @media (max-width: 1023px) {
-    margin: 0 0 52px;
+    margin-bottom: 52px;
   }
 }
 
@@ -238,6 +237,21 @@ section {
         background-color: rgba(var(--primary), 1);
       }
     }
+  }
+  &.btn-border {
+    border-color: rgba(var(--dark), 0.24);
+    color: rgba(var(--dark), 0.24);
+    background-color: #fff;
+    &:hover {
+      @media (any-hover: hover) {
+        border-color: rgba(var(--dark), 0.44);
+        color: rgba(var(--dark), 0.44);
+      }
+    }
+  }
+  &.btn-disabled {
+    cursor: default;
+    pointer-events: none;
   }
 }
 

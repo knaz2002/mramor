@@ -178,7 +178,7 @@
   &__inner {
     display: flex;
     flex-direction: column;
-    height: 100%;
+    // height: 100%;
     padding: 5% 20px 20px;
     height: 100vh;
     overflow-y: auto;
@@ -981,6 +981,126 @@
   .swiper-pagination {
     position: absolute;
     bottom: 0px;
+  }
+}
+
+.quiz {
+  &__title {
+    text-align: center;
+  }
+  &__inner {
+    background-color: rgb(var(--grey));
+    border-radius: 4px;
+    padding: 90px 0 40px;
+  }
+  &__block {
+    max-width: 67%;
+    width: 100%;
+    margin: 0 auto;
+    border-radius: 4px;
+    border: solid 1px red;
+    overflow: hidden;
+    @media (max-width: 1200px) {
+      max-width: 95%;
+    }
+  }
+}
+.quiz-step {
+  background-color: rgb(var(--light));
+  padding: 24px;
+  &__inner {
+    display: grid;
+    grid-template-columns: 1fr 0.5fr;
+    gap: 20px;
+    @media (max-width: 767px) {
+      grid-template-columns: 1fr;
+    }
+  }
+  &__img {
+    border-radius: 10px;
+    overflow: hidden;
+    @media (max-width: 767px) {
+      height: 400px;
+    }
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+}
+.quiz-content {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  &__head {
+  }
+  &__body {
+    flex-grow: 1;
+  }
+  &__footer {
+    margin-top: auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    .btn {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      &.btn-disabled {
+        background-color: #fff;
+        border-color: rgba(var(--dark), 0.24);
+        color: rgba(var(--dark), 0.24);
+      }
+    }
+  }
+  &__name {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 16px;
+    p {
+      font-size: 20px;
+      font-weight: 600;
+    }
+    span {
+      display: inline-block;
+      font-size: 16px;
+      font-weight: 400;
+      color: rgba(var(--dark), 0.6);
+    }
+  }
+  &__strip {
+    margin-bottom: 32px;
+    p {
+      font-size: 14px;
+      color: rgba(var(--dark), 0.6);
+      margin-bottom: 8px;
+    }
+    div {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 10px;
+      span {
+        display: block;
+        width: 100%;
+        height: 4px;
+        border-radius: 50px;
+        background-color: rgba(var(--dark), 0.12);
+        &.quiz-content--primary {
+          background-color: rgb(var(--primary));
+        }
+        &.quiz-content--pink {
+          background-color: rgba(var(--primary), 0.4);
+        }
+      }
+    }
+  }
+  &__title {
+    font-size: 38px;
+    font-weight: 600;
+    margin-bottom: 24px;
   }
 }
 
