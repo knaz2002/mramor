@@ -256,6 +256,7 @@ ul {
 
 section {
   display: block;
+  overflow-x: hidden;
   margin: 0 0 128px;
 }
 @media (max-width: 1023px) {
@@ -666,7 +667,20 @@ section {
   display: flex;
   flex-direction: column;
   height: 100%;
-  padding: 150px 20px 20px;
+  padding: 5% 20px 20px;
+  height: 100vh;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+@media (max-width: 767px) {
+  .header-mobile__inner {
+    padding-top: 20%;
+  }
+}
+@media (max-width: 374px) {
+  .header-mobile__inner {
+    padding-top: 30%;
+  }
 }
 .header-mobile__nav {
   flex-grow: 1;

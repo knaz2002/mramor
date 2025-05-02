@@ -164,6 +164,7 @@ ul {
 }
 section {
   display: block;
+  overflow-x: hidden;
   margin: 0 0 128px;
   @media (max-width: 1023px) {
     margin: 0 0 80px;
