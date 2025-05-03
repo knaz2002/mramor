@@ -235,7 +235,6 @@ showQuestion(0);
 
 
 /****rangeSlider */
-
 const rangeSlider = document.querySelector('.range-slider');
 const thumb = document.querySelector('.range-slider__thumb');
 const amount = document.querySelector('#amount');
@@ -243,6 +242,14 @@ const amount = document.querySelector('#amount');
 let isDown = false;
 let startX;
 let scrollLeft;
+
+const maxLeft = rangeSlider.offsetWidth - thumb.offsetWidth;
+const newLeft = (100 / 500) * maxLeft;
+thumb.style.left = `${newLeft}px`;
+const fillWidth = (newLeft / maxLeft) * 100;
+const gradient = `linear-gradient(to right, rgba(var(--primary), 1) ${fillWidth}%, rgba(var(--dark), 0.24) ${fillWidth}%)`;
+document.querySelector('.range-slider__way').style.backgroundImage = gradient;
+amount.value = 100;
 
 document.querySelector('.range-slider__way').addEventListener('mousedown', (e) => {
   isDown = true;
@@ -260,7 +267,6 @@ document.addEventListener('input', (e) => {
   }
 });
 
-
 amount.addEventListener('input', (e) => {
   const value = parseInt(amount.value);
   if (value > 500) {
@@ -268,7 +274,10 @@ amount.addEventListener('input', (e) => {
   }
   const maxLeft = rangeSlider.offsetWidth - thumb.offsetWidth;
   const newLeft = (value / 500) * maxLeft;
-  thumb.style.left = `${newLeft}px`;;
+  thumb.style.left = `${newLeft}px`;
+  const fillWidth = (newLeft / maxLeft) * 100;
+  const gradient = `linear-gradient(to right, rgba(var(--primary), 1) ${fillWidth}%, rgba(var(--dark), 0.24) ${fillWidth}%)`;
+  document.querySelector('.range-slider__way').style.backgroundImage = gradient;
 });
 
 document.addEventListener('mousemove', (e) => {
@@ -279,12 +288,12 @@ document.addEventListener('mousemove', (e) => {
   const maxLeft = rangeSlider.offsetWidth - thumb.offsetWidth;
   const newLeft = Math.min(Math.max(scrollLeft + walk, 0), maxLeft);
   thumb.style.left = `${newLeft}px`;
-  amount.value = `${Math.round((newLeft / maxLeft) * 500)}м²`;
+  amount.value = Math.round((newLeft / maxLeft) * 500);
   const fillWidth = (newLeft / maxLeft) * 100;
-  document.querySelector('.range-slider__way::before').style.width = `${fillWidth}%`;
-  const color = `hsl(${fillWidth}, 100%, 50%)`;
-  document.querySelector('.range-slider__way').style.background = color;
+  const gradient = `linear-gradient(to right, rgba(var(--primary), 1) ${fillWidth}%, rgba(var(--dark), 0.24) ${fillWidth}%)`;
+  document.querySelector('.range-slider__way').style.backgroundImage = gradient;
 });
+
 
 
 /****accordions */
@@ -409,6 +418,20 @@ function scrollToTop() {
 //       );
 //     });
 // });
+
+document.querySelector('.js-quiz-form').addEventListener('submit', (e) => {
+  e.preventDefault();
+  const formData = new FormData(e.target);
+  console.log('asdasdsa')
+  fetch("../mailer.php", {
+    method: 'POST',
+    body: formData,
+    
+  })
+  .then((response) => response.json())
+  .then((data) => console.log(data))
+  .catch((error) => console.error(error));
+});
 
 document.querySelector(".js-callback-form").addEventListener("submit", function (e) {
   e.preventDefault();

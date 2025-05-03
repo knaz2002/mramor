@@ -1112,117 +1112,73 @@
     }
   }
   &__title {
-    font-size: 38px;
+    font-size: 28px;
+    line-height: 120%;
     font-weight: 600;
     margin-bottom: 24px;
   }
-}
-.range-slider {
-  position: relative;
-  &__inputs {
-    display: flex;
-    flex-direction: column;
+  &__info {
+    margin-bottom: 20px;
   }
-  &__write {
-    position: relative;
-    font-size: 20px;
-    line-height: 100%;
-    padding: 5px;
-    max-width: 90px;
-    color: rgba(var(--primary), 1);
-    input {
-      width: 100%;
-      color: rgba(var(--primary), 1);
-      outline: none;
-      border: none;
-    }
-    span {
-      position: absolute;
-      right: 0;
+  &__info-slider {
+    border: solid 1px rgba(var(--dark), 0.24);
+    padding: 16px;
+    border-radius: 4px;
+  }
+  &__info-checkbox {
+    box-shadow: 2px 2px 16px rgba(0, 0, 0, 0.08);
+    padding: 4px;
+    border-radius: 4px;
+    .form-checkbox {
+      padding: 12px 16px;
+      transition: 0.3s;
+      &:hover {
+        @media (any-hover: hover) {
+          background-color: rgb(var(--dark), 0.04);
+          border-radius: 4px;
+        }
+      }
     }
   }
-  &__strip {
-    // width: 100%;
-    // // overflow: hidden;
-    // padding: 5px 0;
-    // border-radius: 50px;
-    // input {
-    //   width: 100%;
-    //   height: 4px;
-    //   border-radius: 10px;
-    //   background-color: rgba(var(--dark), 0.24);
-    //   border: transparent;
-    //   accent-color: rgba(var(--primary), 1);
-    //   appearance: none;
-
-    //   // overflow: hidden;
-    //   &::-webkit-slider-runnable-track {
-    //     box-sizing: border-box;
-    //     height: 4px;
-    //     background-color: rgba(var(--primary), 1);
-    //   }
-    //   &::-moz-range-track {
-    //     box-sizing: border-box;
-    //     background-color: rgba(var(--primary), 1);
-    //   }
-    //   &::-webkit-slider-thumb {
-    //     -webkit-appearance: none;
-    //     width: 18px;
-    //     height: 18px;
-    //     margin-top: -7.5px;
-    //     border: none;
-    //     border-radius: 50%;
-    //     background: rgba(var(--primary), 1);
-    //     box-shadow: 0 0 0 5px inset rgba(var(--light), 1);
-    //     transition: 300ms;
-    //   }
-    //   &::-moz-range-thumb {
-    //     width: 18px;
-    //     height: 18px;
-    //     margin-top: -7.5px;
-    //     border: none;
-    //     border-radius: 50%;
-    //     background: rgba(var(--primary), 1);
-    //     box-shadow: 0 0 0 5px inset rgba(var(--light), 1);
-    //     transition: 300ms;
-    //   }
-    //   &::-webkit-slider-thumb,
-    //   &:focus-visible::-webkit-slider-thumb {
-    //     box-shadow: 0 0 0 10px inset rgba(var(--primary), 1);
-    //   }
-    //   &:hover::-moz-range-thumb,
-    //   &:focus-visible::-moz-range-thumb {
-    //     box-shadow: 0 0 0 10px inset rgba(var(--primary), 1);
-    //   }
-    //   &:active::-webkit-slider-thumb {
-    //     box-shadow: 0 0 0 30px inset rgba(var(--primary), 1);
-    //   }
-    //   &:active::-moz-range-thumb {
-    //     box-shadow: 0 0 0 30px inset rgba(var(--primary), 1);
-    //   }
-    //   &:focus-visible {
-    //     outline: none;
-    //   }
-    //   &:focus-visible::-webkit-slider-runnable-track {
-    //     outline-offset: 15px;
-    //     outline: 1px solid #000;
-    //   }
-    //   &:focus-visible::-moz-range-track {
-    //     outline-offset: 15px;
-    //     outline: 1px solid #000;
-    //   }
-    //   &::-moz-range-progress {
-    //     border-radius: 10px;
-    //     background-color: rgba(var(--primary), 1);
-    //   }
-    //   &::-webkit-slider-thumb {
-    //     border-image-outset: 0 100vw;
-    //     border-image-repeat: stretch;
-    //     border-image-slice: 0 1;
-    //     border-image-source: linear-gradient(90deg, #c56fff 50%, #ababab 0);
-    //     border-image-width: calc(50% - 4px) 100vw;
-    //   }
-    // }
+  &__info-checkbox-img {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 16px;
+    @media (max-width: 575px) {
+      grid-template-columns: 1fr;
+    }
+    .form-checkbox {
+      border-radius: 4px;
+      padding: 10px;
+      transition: 0.3s;
+      &:hover {
+        @media (any-hover: hover) {
+          background-color: rgba(var(--dark), 0.05);
+        }
+      }
+      &__label {
+        display: grid;
+        grid-template-columns: 25px 1fr;
+        grid-template-areas: "a a" "b  c";
+        gap: 16px;
+      }
+      &__content-img {
+        grid-area: a;
+        border: solid 1px rgba(var(--dark), 0.24);
+        padding-bottom: 100%;
+        position: relative;
+        @media (max-width: 575px) {
+          padding-bottom: 50%;
+        }
+        svg {
+          position: absolute;
+          display: block;
+          left: 50%;
+          top: 50%;
+          transform: translate(-50%, -50%);
+        }
+      }
+    }
   }
 }
 

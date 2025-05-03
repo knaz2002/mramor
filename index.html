@@ -697,7 +697,7 @@
                     <h2 class="title quiz__title">Расчитайте стоимость своего <br> фасада
                         <span class="color-primary"> за пару минут</span>
                     </h2>
-                    <form action="">
+                    <form method="POST" class="js-quiz-form">
                         <div class="quiz__block">
                             <div class="quiz-step">
                                 <div class="quiz-step__inner">
@@ -721,15 +721,31 @@
                                             <div class="quiz-content__body">
                                                 <div class="quiz-content__title">1. Какая площадь объекта в м²?</div>
                                                 <div class="quiz-content__info">
-                                                    <div class="range-slider">
-                                                        <div class="range-slider__numb">
-                                                            <label>
-                                                                <input type="tel" id="amount" pattern="[0-9]*">
-                                                            </label>
-                                                        </div>
+                                                    <div class="quiz-content__info-slider">
+                                                        <div class="range-slider">
+                                                            <div class="range-slider__numb">
+                                                                <label>
+                                                                    <input type="tel" id="amount" pattern="[0-9]*">
+                                                                    <span>
+                                                                        <svg width="18" height="18" viewBox="0 0 18 18"
+                                                                            fill="none"
+                                                                            xmlns="http://www.w3.org/2000/svg">
+                                                                            <path
+                                                                                d="M17.2024 0.79797C16.6907 0.286996 15.9971 0 15.2739 0C14.5507 0 13.8571 0.286996 13.3454 0.79797L1.10278 13.0408C0.75219 13.3894 0.47421 13.8041 0.284923 14.2609C0.0956352 14.7176 -0.00120286 15.2074 1.1277e-05 15.7018V17.2472C1.1277e-05 17.4469 0.0793178 17.6383 0.220484 17.7795C0.361651 17.9207 0.553114 18 0.752753 18H2.29813C2.79251 18.0014 3.28224 17.9047 3.739 17.7155C4.19575 17.5264 4.61045 17.2485 4.95907 16.8979L17.2024 4.65435C17.7132 4.14262 18 3.44916 18 2.72616C18 2.00316 17.7132 1.3097 17.2024 0.79797ZM3.8947 15.8335C3.47015 16.2553 2.89653 16.4927 2.29813 16.4945H1.5055V15.7018C1.50473 15.4052 1.56282 15.1113 1.6764 14.8372C1.78997 14.5632 1.95678 14.3144 2.16716 14.1052L11.4582 4.81393L13.1896 6.54527L3.8947 15.8335ZM16.1373 3.58995L14.2509 5.47711L12.5196 3.74953L14.4067 1.86237C14.5204 1.74894 14.6553 1.659 14.8038 1.59771C14.9522 1.53641 15.1112 1.50495 15.2718 1.50513C15.4324 1.5053 15.5914 1.53711 15.7397 1.59873C15.888 1.66034 16.0227 1.75057 16.1362 1.86425C16.2496 1.97793 16.3395 2.11284 16.4008 2.26128C16.4621 2.40972 16.4936 2.56878 16.4934 2.72937C16.4932 2.88997 16.4614 3.04895 16.3998 3.19726C16.3382 3.34556 16.248 3.48028 16.1343 3.59371L16.1373 3.58995Z"
+                                                                                fill="#BA2565" />
+                                                                        </svg>
+                                                                    </span>
+                                                                </label>
+                                                            </div>
 
-                                                        <div class=" range-slider__way">
-                                                            <span class="range-slider__thumb"></span>
+                                                            <div class=" range-slider__way">
+                                                                <span class="range-slider__thumb"></span>
+                                                            </div>
+
+                                                            <div class="range-slider__info">
+                                                                <div>0 м²</div>
+                                                                <div>500 м²</div>
+                                                            </div>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -784,7 +800,53 @@
                                             <div class="quiz-content__body">
                                                 <div class="quiz-content__title">2. Какая толщина утеплителя необходима?
                                                 </div>
-                                                <div class="quiz-content__info"></div>
+                                                <div class="quiz-content__info">
+                                                    <div class="quiz-content__info-checkbox">
+
+                                                        <div class="form-checkbox">
+                                                            <label class="form-checkbox__label">
+                                                                <input type="checkbox" name="" id=""
+                                                                    class="form-checkbox__input">
+                                                                <span class="form-checkbox__checked"></span>
+                                                                <span class="form-checkbox__content">
+                                                                    30 мм
+                                                                </span>
+                                                            </label>
+                                                        </div>
+                                                        <div class="form-checkbox">
+                                                            <label class="form-checkbox__label">
+                                                                <input type="checkbox" name="" id=""
+                                                                    class="form-checkbox__input">
+                                                                <span class="form-checkbox__checked"></span>
+                                                                <span class="form-checkbox__content">
+                                                                    50 мм
+                                                                </span>
+                                                            </label>
+                                                        </div>
+
+                                                        <div class="form-checkbox">
+                                                            <label class="form-checkbox__label">
+                                                                <input type="checkbox" name="" id=""
+                                                                    class="form-checkbox__input">
+                                                                <span class="form-checkbox__checked"></span>
+                                                                <span class="form-checkbox__content">
+                                                                    100 мм
+                                                                </span>
+                                                            </label>
+                                                        </div>
+
+                                                        <div class="form-checkbox">
+                                                            <label class="form-checkbox__label">
+                                                                <input type="checkbox" name="" id=""
+                                                                    class="form-checkbox__input">
+                                                                <span class="form-checkbox__checked"></span>
+                                                                <span class="form-checkbox__content">
+                                                                    Нужна консультация
+                                                                </span>
+                                                            </label>
+                                                        </div>
+                                                    </div>
+                                                </div>
                                             </div>
                                             <div class="quiz-content__footer">
                                                 <button class="quiz-step__back btn btn-border">
@@ -835,7 +897,84 @@
                                             </div>
                                             <div class="quiz-content__body">
                                                 <div class="quiz-content__title">3. Нужен ли рисунок?</div>
-                                                <div class="quiz-content__info"></div>
+                                                <div class="quiz-content__info">
+                                                    <div class="quiz-content__info-checkbox-img">
+                                                        <div class="form-checkbox">
+                                                            <label class="form-checkbox__label">
+                                                                <span class="form-checkbox__content-img">
+                                                                    <svg width="45" height="45" viewBox="0 0 45 45"
+                                                                        fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                                        <g clip-path="url(#clip0_507_1108)">
+                                                                            <path
+                                                                                d="M36.083 0.333496H8.58301C4.03451 0.333496 0.333008 4.035 0.333008 8.5835V36.0835C0.333008 40.632 4.03451 44.3335 8.58301 44.3335H36.083C40.6315 44.3335 44.333 40.632 44.333 36.0835V8.5835C44.333 4.035 40.6315 0.333496 36.083 0.333496ZM13.1663 33.3335V24.1668H31.4997V33.3335H13.1663ZM2.16634 33.3335V24.1668H11.333V33.3335H2.16634ZM2.16634 13.1668H20.4997V22.3335H2.16634V13.1668ZM22.333 22.3335V13.1668H42.4997V22.3335H22.333ZM13.1663 11.3335V2.16683H31.4997V11.3335H13.1663ZM33.333 24.1668H42.4997V33.3335H33.333V24.1668ZM42.4997 8.5835V11.3335H33.333V2.16683H36.083C39.6213 2.16683 42.4997 5.04516 42.4997 8.5835ZM2.16634 8.5835C2.16634 5.04516 5.04467 2.16683 8.58301 2.16683H11.333V11.3335H2.16634V8.5835ZM2.16634 36.0835V35.1668H20.4997V42.5002H8.58301C5.04467 42.5002 2.16634 39.6218 2.16634 36.0835ZM36.083 42.5002H22.333V35.1668H42.4997V36.0835C42.4997 39.6218 39.6213 42.5002 36.083 42.5002Z"
+                                                                                fill="#1D1D1D" />
+                                                                        </g>
+                                                                        <defs>
+                                                                            <clipPath id="clip0_507_1108">
+                                                                                <rect width="44" height="44"
+                                                                                    fill="white"
+                                                                                    transform="translate(0.333008 0.333496)" />
+                                                                            </clipPath>
+                                                                        </defs>
+                                                                    </svg>
+
+                                                                </span>
+                                                                <input type="checkbox" name="picture" id=""
+                                                                    class="form-checkbox__input">
+                                                                <span class="form-checkbox__checked"></span>
+                                                                <span class="form-checkbox__content">
+
+                                                                    <div class="form-checkbox__content-text">Кирпич
+                                                                    </div>
+                                                                </span>
+                                                            </label>
+                                                        </div>
+
+                                                        <div class="form-checkbox">
+                                                            <label class="form-checkbox__label">
+                                                                <span class="form-checkbox__content-img">
+                                                                    <svg width="44" height="45" viewBox="0 0 44 45"
+                                                                        fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                                        <path fill-rule="evenodd" clip-rule="evenodd"
+                                                                            d="M8.25 0.333496H35.75C40.2985 0.333496 44 4.035 44 8.5835V36.0835C44 40.632 40.2985 44.3335 35.75 44.3335H8.25C3.7015 44.3335 0 40.632 0 36.0835V8.5835C0 4.035 3.7015 0.333496 8.25 0.333496ZM1.83333 22.3335V33.3335V36.0835C1.83333 39.6218 4.71167 42.5002 8.25 42.5002H20.1667H35.75C39.2883 42.5002 42.1667 39.6218 42.1667 36.0835V35.1668V24.1668V11.3335V8.5835C42.1667 5.04516 39.2883 2.16683 35.75 2.16683H33H11H8.25C4.71167 2.16683 1.83333 5.04516 1.83333 8.5835V11.3335V22.3335Z"
+                                                                            fill="#1D1D1D" />
+                                                                    </svg>
+
+                                                                </span>
+                                                                <input type="checkbox" name="picture" id=""
+                                                                    class="form-checkbox__input">
+                                                                <span class="form-checkbox__checked"></span>
+                                                                <span class="form-checkbox__content">
+
+                                                                    <div class="form-checkbox__content-text">Без рисунка
+                                                                    </div>
+                                                                </span>
+                                                            </label>
+                                                        </div>
+
+                                                        <div class="form-checkbox">
+                                                            <label class="form-checkbox__label">
+                                                                <span class="form-checkbox__content-img">
+                                                                    <svg width="45" height="45" viewBox="0 0 45 45"
+                                                                        fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                                        <path fill-rule="evenodd" clip-rule="evenodd"
+                                                                            d="M36.416 0.333496H8.91602C4.36752 0.333496 0.666016 4.035 0.666016 8.5835V36.0835C0.666016 40.632 4.36752 44.3335 8.91602 44.3335H36.416C40.9645 44.3335 44.666 40.632 44.666 36.0835V8.5835C44.666 4.035 40.9645 0.333496 36.416 0.333496ZM42.8327 8.5835C42.8327 5.04516 39.9543 2.16683 36.416 2.16683H8.91602C5.37768 2.16683 2.49935 5.04516 2.49935 8.5835V11.3178C3.33627 11.9221 4.35754 12.2502 5.41748 12.2502C7.55882 12.2502 9.66165 10.932 10.307 9.183C10.5728 8.4625 11.759 8.4625 12.0267 9.183C12.672 10.932 14.7748 12.2502 16.9162 12.2502C19.0575 12.2502 21.1603 10.932 21.8057 9.183C22.0715 8.4625 23.2577 8.4625 23.5253 9.183C24.1707 10.932 26.2735 12.2502 28.4148 12.2502C30.5562 12.2502 32.659 10.932 33.3043 9.183C33.4382 8.82183 33.781 8.5835 34.1642 8.5835C34.5473 8.5835 34.8902 8.82366 35.024 9.183C35.6693 10.932 37.7722 12.2502 39.9135 12.2502C40.9744 12.2502 41.9966 11.92 42.8327 11.3156V8.5835ZM2.49935 36.0835C2.49935 39.6218 5.37768 42.5002 8.91602 42.5002H36.416C39.9543 42.5002 42.8327 39.6218 42.8327 36.0835V35.4349C41.9319 35.8588 40.9364 36.0835 39.9153 36.0835C37.642 36.0835 35.453 34.9945 34.166 33.3445C32.879 34.9945 30.69 36.0835 28.4167 36.0835C26.1433 36.0835 23.9543 34.9945 22.6655 33.3445C21.3785 34.9945 19.1877 36.0835 16.9162 36.0835C14.6447 36.0835 12.4557 34.9945 11.1668 33.3445C9.87982 34.9945 7.68898 36.0835 5.41748 36.0835C4.39655 36.0835 3.40058 35.8589 2.49935 35.4356V36.0835ZM35.024 31.183C35.6693 32.932 37.7722 34.2502 39.9135 34.2502C40.9744 34.2502 41.9966 33.92 42.8327 33.3156V24.4349C41.9319 24.8588 40.9364 25.0835 39.9153 25.0835C37.642 25.0835 35.453 23.9945 34.166 22.3445C32.879 23.9945 30.69 25.0835 28.4167 25.0835C26.1433 25.0835 23.9543 23.9945 22.6655 22.3445C21.3785 23.9945 19.1877 25.0835 16.9162 25.0835C14.6447 25.0835 12.4557 23.9945 11.1668 22.3445C9.87982 23.9945 7.68898 25.0835 5.41748 25.0835C4.39655 25.0835 3.40058 24.8589 2.49935 24.4356V33.3178C3.33627 33.9221 4.35754 34.2502 5.41748 34.2502C7.55882 34.2502 9.66165 32.932 10.307 31.183C10.5728 30.4625 11.759 30.4625 12.0267 31.183C12.672 32.932 14.7748 34.2502 16.9162 34.2502C19.0575 34.2502 21.1603 32.932 21.8057 31.183C22.0715 30.4625 23.2577 30.4625 23.5253 31.183C24.1707 32.932 26.2735 34.2502 28.4148 34.2502C30.5562 34.2502 32.659 32.932 33.3043 31.183C33.4382 30.8218 33.781 30.5835 34.1642 30.5835C34.5473 30.5835 34.8902 30.8237 35.024 31.183ZM35.024 20.183C35.6693 21.932 37.7722 23.2502 39.9135 23.2502C40.9744 23.2502 41.9966 22.92 42.8327 22.3156V13.4349C41.9319 13.8588 40.9364 14.0835 39.9153 14.0835C37.642 14.0835 35.453 12.9945 34.166 11.3445C32.879 12.9945 30.69 14.0835 28.4167 14.0835C26.1433 14.0835 23.9543 12.9945 22.6655 11.3445C21.3785 12.9945 19.1877 14.0835 16.9162 14.0835C14.6447 14.0835 12.4557 12.9945 11.1668 11.3445C9.87982 12.9945 7.68898 14.0835 5.41748 14.0835C4.39655 14.0835 3.40058 13.8589 2.49935 13.4356V22.3178C3.33627 22.9221 4.35754 23.2502 5.41748 23.2502C7.55882 23.2502 9.66165 21.932 10.307 20.183C10.5728 19.4625 11.759 19.4625 12.0267 20.183C12.672 21.932 14.7748 23.2502 16.9162 23.2502C19.0575 23.2502 21.1603 21.932 21.8057 20.183C22.0715 19.4625 23.2577 19.4625 23.5253 20.183C24.1707 21.932 26.2735 23.2502 28.4148 23.2502C30.5562 23.2502 32.659 21.932 33.3043 20.183C33.4382 19.8218 33.781 19.5835 34.1642 19.5835C34.5473 19.5835 34.8902 19.8237 35.024 20.183Z"
+                                                                            fill="#1D1D1D" />
+                                                                    </svg>
+
+                                                                </span>
+                                                                <input type="checkbox" name="picture" id=""
+                                                                    class="form-checkbox__input">
+                                                                <span class="form-checkbox__checked"></span>
+                                                                <span class="form-checkbox__content">
+
+                                                                    <div class="form-checkbox__content-text">Другое
+                                                                    </div>
+                                                                </span>
+                                                            </label>
+                                                        </div>
+                                                    </div>
+                                                </div>
                                             </div>
                                             <div class="quiz-content__footer">
                                                 <button class="quiz-step__back btn btn-border">
@@ -884,10 +1023,39 @@
                                                     </div>
                                                 </div>
                                             </div>
+
                                             <div class="quiz-content__body">
                                                 <div class="quiz-content__title">4.Укажите контактные данные</div>
-                                                <div class="quiz-content__info"></div>
+                                                <div class="quiz-content__info">
+                                                    <p>Оставьте нам свои контактные данные и мы направим расчет Вашего
+                                                        фасада в ближайшее время.</p>
+                                                    <div class="quiz-content-form contact-form">
+                                                        <label class="contact-form__label contact-form__item">
+                                                            <input type="text" class="contact-form__input js-name-input"
+                                                                placeholder="Имя" required>
+                                                        </label>
+                                                        <label class="contact-form__label contact-form__item">
+                                                            <input type="tel"
+                                                                class="contact-form__input phone-input js-phone-input"
+                                                                placeholder="+ 7 (900) 000-00-00" required>
+                                                        </label>
+                                                        <div class="form-checkbox contact-form__item">
+                                                            <label class="form-checkbox__label">
+                                                                <input type="checkbox" name="" id=""
+                                                                    class="form-checkbox__input">
+                                                                <span class="form-checkbox__checked"></span>
+                                                                <div class="form-checkbox__content">Даю согласие
+                                                                    на обработку своих персональных
+                                                                    данных в соответствии с <a href="./img/opd.pdf"
+                                                                        target="_blank">Политикой
+                                                                        конфиденциальности</a></div>
+                                                            </label>
+                                                        </div>
+
+                                                    </div>
+                                                </div>
                                             </div>
+
                                             <div class="quiz-content__footer">
                                                 <button class="quiz-step__back btn btn-border">
                                                     <svg width="20" height="10" viewBox="0 0 20 10" fill="none"

@@ -513,14 +513,47 @@ section {
   height: 4px;
   width: 100%;
   border-radius: 50px;
-  background-color: rgba(var(--dark), 0.24);
+  background-size: 100% 100%;
   display: block;
   position: relative;
+  background-color: rgba(var(--dark), 0.06);
+}
+.range-slider__numb {
+  margin-bottom: 20px;
+}
+.range-slider__numb input {
+  width: 100%;
+  display: block;
+  outline: none;
+  border: none;
+  transition: 0.3s;
+  border-bottom: solid 1px transparent;
+}
+.range-slider__numb input:focus {
+  border-color: rgb(var(--primary));
+}
+.range-slider__numb label {
+  position: relative;
+  width: 100%;
+  max-width: 60px;
+  display: flex;
+  align-items: center;
+  position: relative;
+  font-size: 20px;
+  font-weight: 600;
+  color: rgb(var(--primary));
+}
+.range-slider__numb span {
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
 }
 .range-slider__thumb {
   width: 20px;
   height: 20px;
-  background-color: #333;
+  background-color: #fff;
+  border: solid 1px rgba(var(--dark), 0.24);
   border-radius: 50%;
   position: absolute;
   top: 50%;
@@ -533,23 +566,21 @@ section {
   display: block;
   width: 0.5em;
   height: 0.5em;
-  background-color: rgba(var(--primary));
+  background-color: rgba(var(--primary), 1);
   border-radius: 50%;
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
 }
-.range-slider__thumb:before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 0;
-  height: 100%;
-  background-color: #666;
-  border-radius: 10px;
-  transition: width 0.2s ease-in-out;
+.range-slider__info {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 5px;
+  color: rgba(var(--dark), 0.6);
+  font-size: 16px;
+  font-weight: 400;
 }
 
 .header {
@@ -1649,36 +1680,79 @@ section {
   background-color: rgba(var(--primary), 0.4);
 }
 .quiz-content__title {
-  font-size: 38px;
+  font-size: 28px;
+  line-height: 120%;
   font-weight: 600;
   margin-bottom: 24px;
 }
-
-.range-slider {
+.quiz-content__info {
+  margin-bottom: 20px;
+}
+.quiz-content__info-slider {
+  border: solid 1px rgba(var(--dark), 0.24);
+  padding: 16px;
+  border-radius: 4px;
+}
+.quiz-content__info-checkbox {
+  box-shadow: 2px 2px 16px rgba(0, 0, 0, 0.08);
+  padding: 4px;
+  border-radius: 4px;
+}
+.quiz-content__info-checkbox .form-checkbox {
+  padding: 12px 16px;
+  transition: 0.3s;
+}
+@media (any-hover: hover) {
+  .quiz-content__info-checkbox .form-checkbox:hover {
+    background-color: rgb(var(--dark), 0.04);
+    border-radius: 4px;
+  }
+}
+.quiz-content__info-checkbox-img {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 16px;
+}
+@media (max-width: 575px) {
+  .quiz-content__info-checkbox-img {
+    grid-template-columns: 1fr;
+  }
+}
+.quiz-content__info-checkbox-img .form-checkbox {
+  border-radius: 4px;
+  padding: 10px;
+  transition: 0.3s;
+}
+@media (any-hover: hover) {
+  .quiz-content__info-checkbox-img .form-checkbox:hover {
+    background-color: rgba(var(--dark), 0.05);
+  }
+}
+.quiz-content__info-checkbox-img .form-checkbox__label {
+  display: grid;
+  grid-template-columns: 25px 1fr;
+  grid-template-areas: "a a" "b  c";
+  gap: 16px;
+}
+.quiz-content__info-checkbox-img .form-checkbox__content-img {
+  grid-area: a;
+  border: solid 1px rgba(var(--dark), 0.24);
+  padding-bottom: 100%;
   position: relative;
 }
-.range-slider__inputs {
-  display: flex;
-  flex-direction: column;
+@media (max-width: 575px) {
+  .quiz-content__info-checkbox-img .form-checkbox__content-img {
+    padding-bottom: 50%;
+  }
 }
-.range-slider__write {
-  position: relative;
-  font-size: 20px;
-  line-height: 100%;
-  padding: 5px;
-  max-width: 90px;
-  color: rgba(var(--primary), 1);
-}
-.range-slider__write input {
-  width: 100%;
-  color: rgba(var(--primary), 1);
-  outline: none;
-  border: none;
-}
-.range-slider__write span {
+.quiz-content__info-checkbox-img .form-checkbox__content-img svg {
   position: absolute;
-  right: 0;
+  display: block;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
 }
+
 .computation__inner {
   background-image: url("../img/banner-second.webp");
   background-repeat: no-repeat;
