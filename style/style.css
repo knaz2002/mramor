@@ -1872,9 +1872,6 @@ section {
     grid-template-columns: 1fr;
   }
 }
-.contact__item:first-child {
-  padding-left: 23%;
-}
 .contact__item .title {
   margin-bottom: 0;
 }
