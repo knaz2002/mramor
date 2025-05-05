@@ -251,9 +251,17 @@ const gradient = `linear-gradient(to right, rgba(var(--primary), 1) ${fillWidth}
 document.querySelector('.range-slider__way').style.backgroundImage = gradient;
 amount.value = 100;
 
+//--- захват на десктопе
 document.querySelector('.range-slider__way').addEventListener('mousedown', (e) => {
   isDown = true;
   startX = e.clientX;
+  scrollLeft = thumb.offsetLeft;
+});
+
+//--- захват на мобильном
+document.querySelector('.range-slider__way').addEventListener('touchstart', (e) => {
+  isDown = true;
+  startX = e.touches[0].clientX;
   scrollLeft = thumb.offsetLeft;
 });
 
