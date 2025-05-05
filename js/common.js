@@ -265,6 +265,10 @@ document.querySelector('.range-slider__way').addEventListener('touchstart', (e) 
   scrollLeft = thumb.offsetLeft;
 });
 
+document.addEventListener('touchend', () => {
+  isDown = false;
+});
+
 document.addEventListener('mouseup', () => {
   isDown = false;
 });
@@ -302,7 +306,20 @@ document.addEventListener('mousemove', (e) => {
   document.querySelector('.range-slider__way').style.backgroundImage = gradient;
 });
 
-
+//--- обработчик для мобильных
+document.addEventListener('touchmove', (e) => {
+  if (!isDown) return;
+  e.preventDefault();
+  const x = e.touches[0].clientX;
+  const walk = x - startX;
+  const maxLeft = rangeSlider.offsetWidth - thumb.offsetWidth;
+  const newLeft = Math.min(Math.max(scrollLeft + walk, 0), maxLeft);
+  thumb.style.left = `${newLeft}px`;
+  amount.value = Math.round((newLeft / maxLeft) * 500);
+  const fillWidth = (newLeft / maxLeft) * 100;
+  const gradient = `linear-gradient(to right, rgba(var(--primary), 1) ${fillWidth}%, rgba(var(--dark), 0.24) ${fillWidth}%)`;
+  document.querySelector('.range-slider__way').style.backgroundImage = gradient;
+});
 
 /****accordions */
 const accordions = document.querySelectorAll(".accordion__item");
