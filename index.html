@@ -1786,7 +1786,7 @@
 
         <section class="contact" id="contact">
             <div class="contact__container">
-                <div class="contact__inner pl">
+                <div class="contact__inner">
 
                     <div class="contact__item">
                         <div class="contact__item-block">
@@ -1803,26 +1803,28 @@
                         </div>
                     </div>
                     <div class="contact__item">
-                        <form method="POST" class="contact-form js-callback-form">
-                            <label class="contact-form__label contact-form__item">
-                                <input type="text" class="contact-form__input js-name-input" placeholder="Имя" required>
-                            </label>
-                            <label class="contact-form__label contact-form__item">
-                                <input type="tel" class="contact-form__input phone-input js-phone-input"
-                                    placeholder="+ 7 (900) 000-00-00" required>
-                            </label>
-                            <div class="form-checkbox contact-form__item">
-                                <label class="form-checkbox__label">
-                                    <input type="checkbox" name="" id="" class="form-checkbox__input">
-                                    <span class="form-checkbox__checked"></span>
-                                    <div class="form-checkbox__content">Даю согласие на обработку своих персональных
-                                        данных в соответствии с <a href="./img/opd.pdf" target="_blank">Политикой
-                                            конфиденциальности</a></div>
+                        <form method="POST" class="js-callback-form">
+                            <div class="contact-form">
+                                <label class="contact-form__label contact-form__item">
+                                    <input type="text" class="contact-form__input js-name-input" placeholder="Имя"
+                                        required>
                                 </label>
-                            </div>
-                            <div class="contact-form__send contact-form__item">
-                                <input class="btn btn-dark js-send" type="submit" value="Оставить заявку">
-                                <!-- <button type="submit" class="btn btn-dark">Оставить заявку</button> -->
+                                <label class="contact-form__label contact-form__item">
+                                    <input type="tel" class="contact-form__input phone-input js-phone-input"
+                                        placeholder="+ 7 (900) 000-00-00" required>
+                                </label>
+                                <div class="form-checkbox contact-form__item">
+                                    <label class="form-checkbox__label">
+                                        <input type="checkbox" name="" id="" class="form-checkbox__input">
+                                        <span class="form-checkbox__checked"></span>
+                                        <div class="form-checkbox__content">Даю согласие на обработку своих персональных
+                                            данных в соответствии с <a href="./img/opd.pdf" target="_blank">Политикой
+                                                конфиденциальности</a></div>
+                                    </label>
+                                </div>
+                                <div class="contact-form__send contact-form__item">
+                                    <input class="btn btn-dark js-send" type="submit" value="Оставить заявку">
+                                </div>
                             </div>
                         </form>
                     </div>

@@ -334,6 +334,17 @@
     @media (max-width: 767px) {
       padding-top: 50%;
     }
+    .banner-slider {
+      position: absolute;
+      right: 0;
+      bottom: 0;
+      width: 390px;
+      height: 140px;
+      border: solid 1px red;
+    }
+    .swiper-pagination {
+      margin: 20px 0;
+    }
   }
   &__title {
     max-width: 50%;
@@ -1244,7 +1255,6 @@
 .contact {
   background-color: rgb(var(--grey));
   margin-bottom: 0;
-  overflow-x: hidden;
   &__inner {
     display: grid;
     grid-template-columns: auto 390px;
@@ -1253,18 +1263,21 @@
     padding-top: 64px;
     padding-bottom: 40px;
     overflow-x: hidden;
-    @media (max-width: 1300px) {
-      // grid-template-columns: 1fr;
-      &.pl {
-        padding-left: 0;
-      }
-    }
+    // @media (max-width: 1300px) {
+    //   // grid-template-columns: 1fr;
+    //   &.pl {
+    //     padding-left: 0;
+    //   }
+    // }
 
     @media (max-width: 1200px) {
       grid-template-columns: 1fr;
     }
   }
   &__item {
+    &:first-child {
+      padding-left: 23%;
+    }
     .title {
       margin-bottom: 0;
     }
@@ -1294,6 +1307,7 @@
   }
   input {
     width: 100%;
+    max-width: 100%;
     border: solid 1px rgb(var(--dark), 0.24);
     height: 50px;
     line-height: 50px;
@@ -1313,6 +1327,11 @@
       @media (any-hover: hover) {
         border-color: rgb(var(--primary));
       }
+    }
+    &[type="checkbox"] {
+      background-color: red;
+      width: auto;
+      max-width: 100%;
     }
   }
   &__inputs {
