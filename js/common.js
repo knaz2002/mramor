@@ -99,7 +99,7 @@ new Swiper(".banner-slider", {
   //   el: ".swiper-pagination",
   //   type: "progressbar",
   // },
-  spaceBetween: 20,
+  // spaceBetween: 20,
   // effect: "cards",
   // grabCursor: true,
   effect: "cube",
