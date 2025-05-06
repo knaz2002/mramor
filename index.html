@@ -109,7 +109,7 @@
                                     </a>
                                 </div>
                                 <div class="header__btn">
-                                    <button class="btn btn-grey">Связаться с нами</button>
+                                    <button class="btn btn-grey js-btn-call">Связаться с нами</button>
                                 </div>
                             </div>
                         </div>
@@ -202,20 +202,41 @@
                         </ul>
                     </div>
                     <div class="swiper banner-slider">
+                        <div class="swiper-wrapper banner-slider__wrapper">
 
-                        <div class="swiper-wrapper">
-                            <div class="swiper-slide">Slide 1</div>
-                            <div class="swiper-slide">Slide 2</div>
-                            <div class="swiper-slide">Slide 3</div>
-                            <div class="swiper-slide">Slide 4</div>
-                            <div class="swiper-slide">Slide 5</div>
-                            <div class="swiper-slide">Slide 6</div>
-                            <div class="swiper-slide">Slide 7</div>
-                            <div class="swiper-slide">Slide 8</div>
-                            <div class="swiper-slide">Slide 9</div>
+                            <div class="swiper-slide banner-slide">
+                                <div class="banner-slide__img">
+                                    <img src="./img/slider-min/item2.webp" alt="">
+                                </div>
+                                <div class="banner-slide__info">
+                                    <p>Производство от 2х дней</p>
+                                    <p>Изготовим панели в кратчайшие сроки.</p>
+                                </div>
+                            </div>
+
+                            <div class="swiper-slide banner-slide">
+                                <div class="banner-slide__img">
+                                    <img src="./img/slider-min/item4.webp" alt="">
+                                </div>
+                                <div class="banner-slide__info">
+                                    <p>Гарантия 5лет на продукцию</p>
+                                    <p>Подтверждаем качество официально</p>
+                                </div>
+                            </div>
+
+                            <div class="swiper-slide banner-slide">
+                                <div class="banner-slide__img">
+                                    <img src="./img/slider-min/item8.webp" alt="">
+                                </div>
+                                <div class="banner-slide__info">
+                                    <p>Срок службы фасада до 50 лет</p>
+                                    <p>Надежность фасала на десятилетия</p>
+                                </div>
+                            </div>
+
                         </div>
-                        <div class="swiper-button-next"></div>
-                        <div class="swiper-button-prev"></div>
+                        <!-- <div class="swiper-button-next"></div>
+                        <div class="swiper-button-prev"></div> -->
                         <div class="swiper-pagination"></div>
                     </div>
 
@@ -1900,6 +1921,41 @@
                         d="M28.9382 21.3332L16.8608 9.40084C16.6284 9.18042 16.3187 9.05734 15.9965 9.05734C15.6743 9.05734 15.3646 9.18042 15.1322 9.40084L3.06215 21.3259L1.3335 19.618L13.4035 7.69295C14.1023 7.0341 15.0312 6.6665 15.9971 6.6665C16.9631 6.6665 17.8919 7.0341 18.5907 7.69295L30.6668 19.6253L28.9382 21.3332Z"
                         fill="#FE4F18" />
                 </svg>
+            </div>
+        </div>
+
+        <div class="modal modal-calback js-modal-call">
+            <div class="modal__overlay"></div>
+            <div class="modal__wrap modal-calback__wrap">
+                <div class="modal__close"></div>
+                <div class="modal-calback__form">
+                    <div class="modal-calback__title">Свяжитесь с нами</div>
+                    <div class="modal-calback__subtitle">Оставьте сови данные и мы свяжемся с Вами в ближайшее время
+                        по любому вопросу.</div>
+                    <form method="POST" class="js-callback-form">
+                        <div class="contact-form">
+                            <label class="contact-form__label contact-form__item">
+                                <input type="text" class="contact-form__input js-name-input" placeholder="Имя" required>
+                            </label>
+                            <label class="contact-form__label contact-form__item">
+                                <input type="tel" class="contact-form__input phone-input js-phone-input"
+                                    placeholder="+ 7 (900) 000-00-00" required>
+                            </label>
+                            <div class="form-checkbox contact-form__item">
+                                <label class="form-checkbox__label">
+                                    <input type="checkbox" name="" id="" class="form-checkbox__input">
+                                    <span class="form-checkbox__checked"></span>
+                                    <div class="form-checkbox__content">Даю согласие на обработку своих персональных
+                                        данных в соответствии с <a href="./img/opd.pdf" target="_blank">Политикой
+                                            конфиденциальности</a></div>
+                                </label>
+                            </div>
+                            <div class="contact-form__send contact-form__item">
+                                <input class="btn btn-dark js-send" type="submit" value="Оставить заявку">
+                            </div>
+                        </div>
+                    </form>
+                </div>
             </div>
         </div>
     </footer>

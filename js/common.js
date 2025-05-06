@@ -98,11 +98,11 @@ new Swiper(".banner-slider", {
     el: ".swiper-pagination",
     type: "progressbar",
   },
-
-  navigation: {
-    nextEl: ".swiper-button-next",
-    prevEl: ".swiper-button-prev",
-  },
+  spaceBetween: 20,
+  // navigation: {
+  //   nextEl: ".swiper-button-next",
+  //   prevEl: ".swiper-button-prev",
+  // },
 });
 
 //*** gallery slider */
@@ -192,6 +192,39 @@ document.addEventListener("click", function (event) {
     bodyLock.classList.remove("lock");
   }
 });
+
+/****modal */
+const btnCall = document.querySelector('.js-btn-call');
+const btnCallModal = document.querySelector('.js-modal-call');
+const btnCallClose = document.querySelector('.modal__close');
+const btnCallOverlay = document.querySelector('.modal__overlay')
+const bodyLockModal = document.querySelector("body");
+
+btnCall.addEventListener('click', ()=> {
+  console.log('click')
+  btnCall.classList.toggle("active");
+  btnCallModal.classList.toggle("active");
+  console.log(bodyLockModal)
+})
+btnCallClose.addEventListener('click', ()=> {
+  btnCall.classList.toggle("active");
+  btnCallModal.classList.toggle("active");
+})
+btnCallOverlay.addEventListener('click', ()=> {
+  btnCall.classList.toggle("active");
+  btnCallModal.classList.toggle("active");
+})
+
+// document.addEventListener("click", function (event) {
+//   const clickInside = event.composedPath().includes(btnCall);
+//   if (!clickInside && !btnCall.contains(event.target)) {
+//     btnCall.classList.remove("active");
+//     btnCallModal.classList.remove("active");
+//     console.log('asjdhasjkd')
+//   }
+// });
+
+
 
 
 /****quiz */
@@ -505,3 +538,4 @@ document.querySelector(".js-callback-form").addEventListener("submit", function 
       modalInfo.innerHTML = 'Произошла ошибка при отправке сообщения. Пожалуйста, попробуйте позже.';
     });
 });
+
