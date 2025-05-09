@@ -95,13 +95,6 @@ function pauseEvent(e) {
 //**** banner slider */
 new Swiper(".banner-slider", {
   loop: true,
-  // pagination: {
-  //   el: ".swiper-pagination",
-  //   type: "progressbar",
-  // },
-  // spaceBetween: 20,
-  // effect: "cards",
-  // grabCursor: true,
   effect: "cube",
       grabCursor: true,
       cubeEffect: {
@@ -110,12 +103,8 @@ new Swiper(".banner-slider", {
         shadowOffset: 20,
         shadowScale: 0.94,
       },
-      // autoplay: true,
+      autoplay: true,
       speed: 800
-  // navigation: {
-  //   nextEl: ".swiper-button-next",
-  //   prevEl: ".swiper-button-prev",
-  // },
 });
 
 //*** gallery slider */
