@@ -814,7 +814,7 @@
   padding: 16px;
   display: flex;
   flex-direction: column;
-  cursor: pointer;
+
   transition: 0.3s;
   &:hover {
     @media (any-hover: hover) {
@@ -1415,6 +1415,15 @@
       flex-direction: column;
       gap: 20px;
       justify-content: space-between;
+    }
+  }
+  &__item-block {
+    &:nth-child(2) {
+      a {
+        display: block;
+        font-size: 28px;
+        font-weight: 600;
+      }
     }
   }
 }

@@ -207,24 +207,32 @@ document.addEventListener("click", function (event) {
 });
 
 /****modal */
-const btnCall = document.querySelector('.js-btn-call');
+const btnCalls = document.querySelectorAll('.js-btn-call');
 const btnCallModal = document.querySelector('.js-modal-call');
 const btnCallClose = document.querySelector('.modal__close');
 const btnCallOverlay = document.querySelector('.modal__overlay')
 const bodyLockModal = document.querySelector("body");
 
-btnCall.addEventListener('click', ()=> {
-  console.log('click')
-  btnCall.classList.toggle("active");
-  btnCallModal.classList.toggle("active");
-  console.log(bodyLockModal)
+btnCalls.forEach(btnCall => {
+  btnCall.addEventListener('click', () => {
+    console.log('click')
+    btnCall.classList.toggle("active");
+    btnCallModal.classList.toggle("active");
+    console.log(bodyLockModal)
+  })
 })
-btnCallClose.addEventListener('click', ()=> {
-  btnCall.classList.toggle("active");
+
+btnCallClose.addEventListener('click', () => {
+  btnCalls.forEach(btnCall => {
+    btnCall.classList.toggle("active");
+  })
   btnCallModal.classList.toggle("active");
 })
-btnCallOverlay.addEventListener('click', ()=> {
-  btnCall.classList.toggle("active");
+
+btnCallOverlay.addEventListener('click', () => {
+  btnCalls.forEach(btnCall => {
+    btnCall.classList.toggle("active");
+  })
   btnCallModal.classList.toggle("active");
 })
 
