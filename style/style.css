@@ -281,6 +281,12 @@ section {
   position: relative;
   overflow: hidden;
 }
+@media (max-width: 575px) {
+  .btn {
+    width: 100%;
+    text-align: center;
+  }
+}
 .btn:focus {
   box-shadow: 0 0 0 2px rgba(var(--primary), 0.5);
   outline: none;
@@ -1026,6 +1032,11 @@ section {
   width: 100%;
   height: 100%;
 }
+.banner-slider__wrapper {
+  height: auto;
+  display: flex;
+}
+
 .banner-slide {
   display: grid !important;
   grid-template-columns: 0.5fr 1fr;

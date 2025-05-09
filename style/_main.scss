@@ -461,6 +461,10 @@
   .swiper-pagination {
     // margin-bottom: 20px;
   }
+  &__wrapper {
+    height: auto;
+    display: flex;
+  }
 }
 .banner-slide {
   display: grid !important;
