@@ -549,6 +549,9 @@
   @media (max-width: 1200px) {
     min-height: 300px;
   }
+  @media (max-width: 767px) {
+    padding: 24px 16px;
+  }
   &::before {
     content: "";
     display: block;
@@ -560,6 +563,9 @@
     right: 0;
     background-color: rgb(var(--grey));
     z-index: 1;
+    @media (max-width: 767px) {
+      height: 24px;
+    }
   }
   &__title {
     margin-bottom: 16px;

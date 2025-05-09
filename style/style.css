@@ -1153,6 +1153,11 @@ section {
     min-height: 300px;
   }
 }
+@media (max-width: 767px) {
+  .panel-item {
+    padding: 24px 16px;
+  }
+}
 .panel-item::before {
   content: "";
   display: block;
@@ -1164,6 +1169,11 @@ section {
   right: 0;
   background-color: rgb(var(--grey));
   z-index: 1;
+}
+@media (max-width: 767px) {
+  .panel-item::before {
+    height: 24px;
+  }
 }
 .panel-item__title {
   margin-bottom: 16px;
