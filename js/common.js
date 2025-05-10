@@ -481,8 +481,8 @@ document.querySelector(".js-callback-form").addEventListener("submit", function 
     })
     .catch((error) => {
       console.error('Error:', error);
-      console.log(
-        "Произошла ошибка при отправке сообщения. Пожалуйста, попробуйте позже.2"
+      console.log(error
+        // "Произошла ошибка при отправке сообщения. Пожалуйста, попробуйте позже.2"
       );
     });
 });

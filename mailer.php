@@ -18,15 +18,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $mail->Host = 'smtp.timeweb.ru';
         $mail->SMTPAuth = true;
         $mail->Username = 'info@codeseven.ru';
-        // $mail->Username = 'ascwork86@gmail.com';
         $mail->Password = 'mg208y92c2';
         $mail->SMTPSecure = 'ssl';
         $mail->Port = 465;
 
         $mail->setFrom('info@codeseven.ru', 'Contact Form');
         $mail->addAddress('info@codeseven.ru');
-        // $mail->setFrom('ascwork86@gmail.com', 'Contact Form');
-        // $mail->addAddress('ascwork86@gmail.com');
 
         $mail->isHTML(true);
         $mail->CharSet = 'UTF-8';
