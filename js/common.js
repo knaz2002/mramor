@@ -451,12 +451,29 @@ function scrollToTop() {
 }
 
 
+
+// const checkbox = document.querySelector('.form-checkbox__input');
+// const submitButton = document.querySelector('.js-send');
+
+// // добавляем атрибут disabled к кнопке отправки формы
+// submitButton.disabled = true;
+
+// checkbox.addEventListener('change', () => {
+//   if (checkbox.checked) {
+//     submitButton.disabled = false;
+//   } else {
+//     submitButton.disabled = true;
+//   }
+// });
+
+const modalForm = document.querySelector('.modal-success')
 //---Форма обратной связи
 document.querySelector(".js-callback-form").addEventListener("submit", function (e) {
   e.preventDefault();
 
   const form = this.closest("form");
   const formData = new FormData(form);
+
 
   // Get form values
   formData.append("name", form.querySelector('input[type="text"]').value);
@@ -470,10 +487,11 @@ document.querySelector(".js-callback-form").addEventListener("submit", function 
     .then((response) => response.json())
     .then((data) => {
       if (data.success) {
-        modalTitle.innerHTML = 'Данные отправлены!';
-        modalInfo.innerHTML = 'Мы свяжемся с Вами в ближайшее время.';
-        modalForm.classList.add("modal-open");
+        // modalTitle.innerHTML = 'Спасибо!';
+        // modalInfo.innerHTML = 'Мы получили Ваши данные и свяжемся с Вами в ближайшее время.';
+        modalForm.classList.add("active");
         bodyLock.classList.add("lock");
+        alert(data.message)
         form.reset();
       } else {
         console.log(data.message);
@@ -488,67 +506,76 @@ document.querySelector(".js-callback-form").addEventListener("submit", function 
 });
 
 
+const quizData = {
+  ploshad: 0,
+  tolshina: 50,
+  consultation: false,
+  picture: '',
+}
 
-//***FORM QUIZ */
-document.querySelector('.js-quiz-form').addEventListener('submit', (e) => {
-  e.preventDefault();
-  const formData = new FormData(e.target);
-  console.log('asdasdsa')
-  fetch("../mailer.php", {
-    method: 'POST',
-    body: formData,
+quizData.ploshad = 120
+console.log(quizData)
+
+// //***FORM QUIZ */
+// document.querySelector('.js-quiz-form').addEventListener('submit', (e) => {
+//   e.preventDefault();
+//   const formData = new FormData(e.target);
+//   console.log('asdasdsa')
+//   fetch("../mailer.php", {
+//     method: 'POST',
+//     body: formData,
     
-  })
-  .then((response) => response.json())
-  .then((data) => console.log(data))
-  .catch((error) => console.error(error));
-});
+//   })
+//   .then((response) => response.json())
+//   .then((data) => console.log(data))
+//   .catch((error) => console.error(error));
+// });
 
-document.querySelector(".js-callback-form").addEventListener("submit", function (e) {
-  e.preventDefault();
+// document.querySelector(".js-callback-form").addEventListener("submit", function (e) {
+//   e.preventDefault();
 
-  const form = this.closest("form");
-  const nameInput = form.querySelector('.js-name-input');
-  const phoneInput = form.querySelector('.js-phone-input');
+//   const form = this.closest("form");
+//   const nameInput = form.querySelector('.js-name-input');
+//   const phoneInput = form.querySelector('.js-phone-input');
 
-  if (!nameInput.value || !phoneInput.value) {
-    // Display an error message to the user
-    modalTitle.innerHTML = 'Ошибка!';
-    modalInfo.innerHTML = 'Пожалуйста, заполните все поля.';
-    modalForm.classList.add("modal-open");
-    bodyLock.classList.add("lock");
-    return;
-  }
+//   if (!nameInput.value || !phoneInput.value) {
+//     // Display an error message to the user
+//     modalTitle.innerHTML = 'Ошибка!';
+//     modalInfo.innerHTML = 'Пожалуйста, заполните все поля.';
+//     modalForm.classList.add("modal-open");
+//     bodyLock.classList.add("lock");
+//     return;
+//   }
 
-  const formData = new FormData(form);
-  formData.append("name", nameInput.value);
-  formData.append("phone", phoneInput.value);
+//   const formData = new FormData(form);
+//   formData.append("name", nameInput.value);
+//   formData.append("phone", phoneInput.value);
 
-  fetch("../mailer.php", {
-    method: "POST",
-    body: formData,
-  })
-    .then((response) => {
-      if (!response.ok) {
-        throw new Error(`HTTP error! status: ${response.status}`);
-      }
-      return response.json();
-    })
-    .then((data) => {
-      if (data.success) {
-        modalTitle.innerHTML = 'Данные отправлены!';
-        modalInfo.innerHTML = 'Мы свяжемся с Вами в ближайшее время.';
-        modalForm.classList.add("modal-open");
-        bodyLock.classList.add("lock");
-        form.reset();
-      } else {
-        console.log(data.message);
-      }
-    })
-    .catch((error) => {
-      console.error('Error:', error);
-      modalTitle.innerHTML = 'Ошибка!';
-      modalInfo.innerHTML = 'Произошла ошибка при отправке сообщения. Пожалуйста, попробуйте позже.';
-    });
-});
+//   fetch("../mailer.php", {
+//     method: "POST",
+//     body: formData,
+//   })
+//     .then((response) => {
+//       if (!response.ok) {
+//         throw new Error(`HTTP error! status: ${response.status}`);
+//       }
+//       return response.json();
+//     })
+//     .then((data) => {
+//       if (data.success) {
+//         modalTitle.innerHTML = 'Данные отправлены!';
+//         modalInfo.innerHTML = 'Мы свяжемся с Вами в ближайшее время.';
+//         modalForm.classList.add("modal-open");
+//         bodyLock.classList.add("lock");
+//         form.reset();
+//       } else {
+//         console.log(data.message);
+//       }
+//     })
+//     .catch((error) => {
+//       console.error('Error:', error);
+//       modalTitle.innerHTML = 'Ошибка!';
+//       modalInfo.innerHTML = 'Произошла ошибка при отправке сообщения. Пожалуйста, попробуйте позже.';
+//     });
+// });
 

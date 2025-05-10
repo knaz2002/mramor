@@ -1592,3 +1592,24 @@
     text-align: center;
   }
 }
+.modal-success {
+  text-align: center;
+  &__title {
+    font-size: 24px;
+    font-weight: 600;
+    margin: 24px 0 16px;
+  }
+  &__subtitle {
+    font-size: 16px;
+    font-weight: 400;
+    max-width: 80%;
+    margin: 0 auto 24px;
+  }
+  &__btn {
+    &.btn {
+      cursor: pointer;
+      width: 100%;
+      max-width: 180px;
+    }
+  }
+}
