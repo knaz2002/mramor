@@ -487,6 +487,9 @@ document.querySelector(".js-callback-form").addEventListener("submit", function 
     });
 });
 
+
+
+//***FORM QUIZ */
 document.querySelector('.js-quiz-form').addEventListener('submit', (e) => {
   e.preventDefault();
   const formData = new FormData(e.target);
