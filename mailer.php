@@ -36,7 +36,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             <h2>Новая заявка с формы обратной связи</h2>
             <p><strong>Имя:</strong> {$name}</p>
             <p><strong>Телефон:</strong> {$phone}</p>
-            <p><strong>Сообщение:</strong><br>{$message}</p>
         ";
 
         $mail->Body = $emailBody;
