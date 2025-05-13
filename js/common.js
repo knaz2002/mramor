@@ -439,6 +439,7 @@ const modalSuccess = document.querySelector('.modal-success')
 const btnModalSuccess = document.querySelector('.modal-success__btn')
 const bodyLockModal = document.querySelector("body");
 
+
 // const chekedModal = document.querySelectorAll('.js-send')
 // const checkbox = document.querySelectorAll('.form-checkbox__input');
 
@@ -467,6 +468,7 @@ modalClose.forEach(close => {
   })
 })
 
+//----валидация checkbox
 modal.forEach((modal) => {
 
   const modalCheckbox = modal.querySelector('.form-checkbox__input');
@@ -482,6 +484,8 @@ modal.forEach((modal) => {
     }
   });
 });
+
+// const formName = document.querySelector('.js-name-input');
 
 
 // btnModalSuccess.addEventListener('click', () => {
