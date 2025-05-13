@@ -195,44 +195,7 @@ document.addEventListener("click", function (event) {
   }
 });
 
-/****modal */
-const btnCalls = document.querySelectorAll('.js-btn-call');
-const btnCallModal = document.querySelector('.js-modal-call');
-const btnCallClose = document.querySelector('.modal__close');
-const btnCallOverlay = document.querySelector('.modal__overlay')
-const bodyLockModal = document.querySelector("body");
 
-btnCalls.forEach(btnCall => {
-  btnCall.addEventListener('click', () => {
-    console.log('click')
-    btnCall.classList.toggle("active");
-    btnCallModal.classList.toggle("active");
-    console.log(bodyLockModal)
-  })
-})
-
-btnCallClose.addEventListener('click', () => {
-  btnCalls.forEach(btnCall => {
-    btnCall.classList.toggle("active");
-  })
-  btnCallModal.classList.toggle("active");
-})
-
-btnCallOverlay.addEventListener('click', () => {
-  btnCalls.forEach(btnCall => {
-    btnCall.classList.toggle("active");
-  })
-  btnCallModal.classList.toggle("active");
-})
-
-// document.addEventListener("click", function (event) {
-//   const clickInside = event.composedPath().includes(btnCall);
-//   if (!clickInside && !btnCall.contains(event.target)) {
-//     btnCall.classList.remove("active");
-//     btnCallModal.classList.remove("active");
-//     console.log('asjdhasjkd')
-//   }
-// });
 
 
 
@@ -466,14 +429,73 @@ function scrollToTop() {
 //   }
 // });
 
-const modalForm = document.querySelector('.modal-success')
+/****modal */
+const btnCalls = document.querySelectorAll('.js-btn-call');
+const btnCallModal = document.querySelector('.js-modal-call');
+const modal = document.querySelectorAll('.modal')
+const modalClose = document.querySelectorAll('.modal__close');
+const modalOverlay = document.querySelectorAll('.modal__overlay')
+const modalSuccess = document.querySelector('.modal-success')
+const btnModalSuccess = document.querySelector('.modal-success__btn')
+const bodyLockModal = document.querySelector("body");
+
+//----открытие мадалки обратной связи
+btnCalls.forEach(btnCall => {
+  btnCall.addEventListener('click', () => {
+    console.log('click')
+    btnCall.classList.toggle("active");
+    btnCallModal.classList.toggle("active");
+    console.log(bodyLockModal)
+  })
+})
+//----закрытие мадалок по overlay
+modalOverlay.forEach(overlay => {
+  overlay.addEventListener('click', () => {
+    modal.forEach(modal => {
+      modal.classList.remove("active");
+    })
+  })
+})
+//----закрытие мадалок по modal__close
+modalClose.forEach(close => {
+  close.addEventListener('click', () => {
+    modal.forEach(modal => {
+      modal.classList.remove("active");
+    })
+  })
+})
+
+
+btnModalSuccess.addEventListener('click', () => {
+  btnCallOverlay.classList.toggle("active");
+  modalSuccess.classList.toggle("active");
+})
+
+// document.addEventListener("click", function (event) {
+//   const clickInside = event.composedPath().includes(btnCall);
+//   if (!clickInside && !btnCall.contains(event.target)) {
+//     btnCall.classList.remove("active");
+//     btnCallModal.classList.remove("active");
+//     console.log('asjdhasjkd')
+//   }
+// });
+
+
+
 //---Форма обратной связи
-document.querySelector(".js-callback-form").addEventListener("submit", function (e) {
-  e.preventDefault();
+const formsFeedback = document.querySelectorAll(".js-callback-form");
 
-  const form = this.closest("form");
+formsFeedback.forEach(form => {
+  form.addEventListener("submit", function(e) {
+    e.preventDefault();
+    sendForm(this);
+  })
+})
+
+
+function sendForm(form) {
+  console.log('тест формы', 3)
   const formData = new FormData(form);
-
 
   // Get form values
   formData.append("name", form.querySelector('input[type="text"]').value);
@@ -489,9 +511,9 @@ document.querySelector(".js-callback-form").addEventListener("submit", function 
       if (data.success) {
         // modalTitle.innerHTML = 'Спасибо!';
         // modalInfo.innerHTML = 'Мы получили Ваши данные и свяжемся с Вами в ближайшее время.';
-        modalForm.classList.add("active");
+        modalSuccess.classList.add("active");
         bodyLock.classList.add("lock");
-        alert(data.message)
+        btnCallModal.classList.remove("active");
         form.reset();
       } else {
         console.log(data.message);
@@ -503,7 +525,7 @@ document.querySelector(".js-callback-form").addEventListener("submit", function 
         // "Произошла ошибка при отправке сообщения. Пожалуйста, попробуйте позже.2"
       );
     });
-});
+}
 
 
 const quizData = {
@@ -542,7 +564,7 @@ console.log(quizData)
 //     // Display an error message to the user
 //     modalTitle.innerHTML = 'Ошибка!';
 //     modalInfo.innerHTML = 'Пожалуйста, заполните все поля.';
-//     modalForm.classList.add("modal-open");
+//     modalSuccess.classList.add("modal-open");
 //     bodyLock.classList.add("lock");
 //     return;
 //   }
@@ -565,7 +587,7 @@ console.log(quizData)
 //       if (data.success) {
 //         modalTitle.innerHTML = 'Данные отправлены!';
 //         modalInfo.innerHTML = 'Мы свяжемся с Вами в ближайшее время.';
-//         modalForm.classList.add("modal-open");
+//         modalSuccess.classList.add("modal-open");
 //         bodyLock.classList.add("lock");
 //         form.reset();
 //       } else {
