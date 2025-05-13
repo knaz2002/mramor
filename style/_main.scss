@@ -1422,7 +1422,7 @@
       color: rgb(var(--dark), 0.24);
     }
     &:focus {
-      box-shadow: 0 0 2px rgba(var(--primary), 0.8);
+      box-shadow: 0 0 0 1px rgba(var(--primary), 0.4);
     }
     &:hover {
       @media (any-hover: hover) {
@@ -1611,5 +1611,12 @@
       width: 100%;
       max-width: 180px;
     }
+  }
+}
+
+.js-send {
+  &:disabled {
+    pointer-events: none;
+    background-color: rgba(var(--dark), 0.5);
   }
 }

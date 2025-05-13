@@ -439,10 +439,12 @@ const modalSuccess = document.querySelector('.modal-success')
 const btnModalSuccess = document.querySelector('.modal-success__btn')
 const bodyLockModal = document.querySelector("body");
 
+// const chekedModal = document.querySelectorAll('.js-send')
+// const checkbox = document.querySelectorAll('.form-checkbox__input');
+
 //----открытие мадалки обратной связи
 btnCalls.forEach(btnCall => {
   btnCall.addEventListener('click', () => {
-    console.log('click')
     btnCall.classList.toggle("active");
     btnCallModal.classList.toggle("active");
     console.log(bodyLockModal)
@@ -465,11 +467,27 @@ modalClose.forEach(close => {
   })
 })
 
+modal.forEach((modal) => {
 
-btnModalSuccess.addEventListener('click', () => {
-  btnCallOverlay.classList.toggle("active");
-  modalSuccess.classList.toggle("active");
-})
+  const modalCheckbox = modal.querySelector('.form-checkbox__input');
+  const modalSend = modal.querySelector('.js-send');
+
+  modalSend.disabled = true;
+
+  modalCheckbox.addEventListener('change', () => {
+    if (modalCheckbox.checked) {
+      modalSend.disabled = false;
+    } else {
+      modalSend.disabled = true;
+    }
+  });
+});
+
+
+// btnModalSuccess.addEventListener('click', () => {
+//   btnCallOverlay.classList.toggle("active");
+//   modalSuccess.classList.toggle("active");
+// })
 
 // document.addEventListener("click", function (event) {
 //   const clickInside = event.composedPath().includes(btnCall);
@@ -492,12 +510,10 @@ formsFeedback.forEach(form => {
   })
 })
 
-
 function sendForm(form) {
   console.log('тест формы', 3)
   const formData = new FormData(form);
 
-  // Get form values
   formData.append("name", form.querySelector('input[type="text"]').value);
   formData.append("phone", form.querySelector('input[type="tel"]').value);
   // formData.append("message", form.querySelector("textarea").value);
