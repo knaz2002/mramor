@@ -438,6 +438,7 @@ const modalOverlay = document.querySelectorAll('.modal__overlay')
 const modalSuccess = document.querySelector('.modal-success')
 const btnModalSuccess = document.querySelector('.modal-success__btn')
 const bodyLockModal = document.querySelector("body");
+const formCallback = document.querySelectorAll('.form-callback')
 
 
 // const chekedModal = document.querySelectorAll('.js-send')
@@ -469,10 +470,10 @@ modalClose.forEach(close => {
 })
 
 //----валидация checkbox
-modal.forEach((modal) => {
+formCallback.forEach((form) => {
 
-  const modalCheckbox = modal.querySelector('.form-checkbox__input');
-  const modalSend = modal.querySelector('.js-send');
+  const modalCheckbox = form.querySelector('.form-checkbox__input');
+  const modalSend = form.querySelector('.js-send');
 
   modalSend.disabled = true;
 
