@@ -468,6 +468,10 @@ modalClose.forEach(close => {
     })
   })
 })
+btnModalSuccess.addEventListener('click', () => {
+  modalSuccess.classList.remove("active");
+  btnCallModal.classList.remove("active");
+})
 
 //----валидация checkbox
 formCallback.forEach((form) => {
@@ -493,16 +497,6 @@ formCallback.forEach((form) => {
 //   btnCallOverlay.classList.toggle("active");
 //   modalSuccess.classList.toggle("active");
 // })
-
-// document.addEventListener("click", function (event) {
-//   const clickInside = event.composedPath().includes(btnCall);
-//   if (!clickInside && !btnCall.contains(event.target)) {
-//     btnCall.classList.remove("active");
-//     btnCallModal.classList.remove("active");
-//     console.log('asjdhasjkd')
-//   }
-// });
-
 
 
 //---Форма обратной связи
@@ -548,77 +542,50 @@ function sendForm(form) {
     });
 }
 
+const form = document.querySelector('.js-quiz-form');
+// const rangeSlider = document.querySelector('.range-slider');
+const checkboxes = document.querySelectorAll('.form-checkbox__input');
+const telInput = document.querySelector('.phone-input');
+const textInput = document.querySelector('.js-name-input');
 
-const quizData = {
-  ploshad: 0,
-  tolshina: 50,
-  consultation: false,
-  picture: '',
-}
+form.addEventListener('submit', (e) => {
+  e.preventDefault();
 
-quizData.ploshad = 120
-console.log(quizData)
+  const rangeValue = rangeSlider.querySelector('#amount').value;
+  const checkboxValues = [];
+  checkboxes.forEach((checkbox) => {
+    if (checkbox.checked) {
+      checkboxValues.push(checkbox.name);
+    }
+  });
+  const telValue = telInput.value;
+  const textValue = textInput.value;
 
-// //***FORM QUIZ */
-// document.querySelector('.js-quiz-form').addEventListener('submit', (e) => {
-//   e.preventDefault();
-//   const formData = new FormData(e.target);
-//   console.log('asdasdsa')
-//   fetch("../mailer.php", {
-//     method: 'POST',
-//     body: formData,
-    
-//   })
-//   .then((response) => response.json())
-//   .then((data) => console.log(data))
-//   .catch((error) => console.error(error));
-// });
+  const formData = {
+    rangeValue,
+    checkboxValues,
+    telValue,
+    textValue,
+  };
 
-// document.querySelector(".js-callback-form").addEventListener("submit", function (e) {
-//   e.preventDefault();
+  fetch('/отправить-форму', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify(formData),
+  })
+    .then((response) => response.json())
+    .then((data) => console.log(data))
+    .catch((error) => console.error(error));
+});
 
-//   const form = this.closest("form");
-//   const nameInput = form.querySelector('.js-name-input');
-//   const phoneInput = form.querySelector('.js-phone-input');
+// const quizData = {
+//   area: 0, //--площадь объекта
+//   thickness: 50, //---толщина стен
+//   // consultation: false, //---консультация
+//   picture: '', //---изображение
+// }
 
-//   if (!nameInput.value || !phoneInput.value) {
-//     // Display an error message to the user
-//     modalTitle.innerHTML = 'Ошибка!';
-//     modalInfo.innerHTML = 'Пожалуйста, заполните все поля.';
-//     modalSuccess.classList.add("modal-open");
-//     bodyLock.classList.add("lock");
-//     return;
-//   }
-
-//   const formData = new FormData(form);
-//   formData.append("name", nameInput.value);
-//   formData.append("phone", phoneInput.value);
-
-//   fetch("../mailer.php", {
-//     method: "POST",
-//     body: formData,
-//   })
-//     .then((response) => {
-//       if (!response.ok) {
-//         throw new Error(`HTTP error! status: ${response.status}`);
-//       }
-//       return response.json();
-//     })
-//     .then((data) => {
-//       if (data.success) {
-//         modalTitle.innerHTML = 'Данные отправлены!';
-//         modalInfo.innerHTML = 'Мы свяжемся с Вами в ближайшее время.';
-//         modalSuccess.classList.add("modal-open");
-//         bodyLock.classList.add("lock");
-//         form.reset();
-//       } else {
-//         console.log(data.message);
-//       }
-//     })
-//     .catch((error) => {
-//       console.error('Error:', error);
-//       modalTitle.innerHTML = 'Ошибка!';
-//       modalInfo.innerHTML = 'Произошла ошибка при отправке сообщения. Пожалуйста, попробуйте позже.';
-//     });
-// });
-
+// quizData.ploshad = 120
+// console.log(quizData)

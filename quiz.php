@@ -10,7 +10,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     $name = $_POST['name'] ?? '';
     $phone = $_POST['phone'] ?? '';
-    // $message = $_POST['message'] ?? '';
+    $thickness = $_POST['thickness'] ?? '';
+    $area = $_POST['area'] ?? '';
+    // $consultation = $_POST['consultation'] ?? '';
+    $picture = $_POST['picture'] ?? '';
     $mail = new PHPMailer(true);
 
     try {
@@ -22,15 +25,18 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $mail->SMTPSecure = 'ssl';
         $mail->Port = 465;
 
-        $mail->setFrom('info@codeseven.ru', 'Термопанели Сатуро');
+        $mail->setFrom('info@codeseven.ru', 'Contact Form');
         $mail->addAddress('info@codeseven.ru');
 
         $mail->isHTML(true);
         $mail->CharSet = 'UTF-8';
-        $mail->Subject = 'Новая заявка с сайта https://saturoterm.ru';
+        $mail->Subject = 'Новая заявка с сайта по расчету фасада';
         
         $emailBody = "
-            <h2>Новая заявка с формы обратной связи с сайта Термопанелей</h2>
+            <h2>Новый расчет фасад</h2>
+            <p><strong>Площадь объекта:</strong> {$thickness}</p>
+            <p><strong>Толщина утеплителя:</strong> {$area}</p>
+            <p><strong>Выбор рисунка:</strong> {$picture}</p>
             <p><strong>Имя:</strong> {$name}</p>
             <p><strong>Телефон:</strong> {$phone}</p>
         ";
