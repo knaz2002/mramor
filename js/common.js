@@ -542,13 +542,15 @@ function sendForm(form) {
     });
 }
 
-const form = document.querySelector('.js-quiz-form');
+
+
+const formQuiz= document.querySelector('.js-quiz-form');
 // const rangeSlider = document.querySelector('.range-slider');
 const checkboxes = document.querySelectorAll('.form-checkbox__input');
 const telInput = document.querySelector('.phone-input');
 const textInput = document.querySelector('.js-name-input');
 
-form.addEventListener('submit', (e) => {
+formQuiz.addEventListener('submit', (e) => {
   e.preventDefault();
 
   const rangeValue = rangeSlider.querySelector('#amount').value;
@@ -568,17 +570,19 @@ form.addEventListener('submit', (e) => {
     textValue,
   };
 
-  fetch('/отправить-форму', {
-    method: 'POST',
-    headers: {
-      'Content-Type': 'application/json',
-    },
-    body: JSON.stringify(formData),
-  })
-    .then((response) => response.json())
-    .then((data) => console.log(data))
-    .catch((error) => console.error(error));
+  // fetch('../quiz.php', {
+  //   method: 'POST',
+  //   headers: {
+  //     'Content-Type': 'application/json',
+  //   },
+  //   body: JSON.stringify(formData),
+  // })
+  //   .then((response) => response.json())
+  //   .then((data) => console.log(data))
+  //   .catch((error) => console.error(error));
 });
+
+
 
 // const quizData = {
 //   area: 0, //--площадь объекта
