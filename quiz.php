@@ -8,12 +8,12 @@ require 'SMTP.php';
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
-    $name = $_POST['name'] ?? '';
-    $phone = $_POST['phone'] ?? '';
-    $thickness = $_POST['thickness'] ?? '';
+    $name = trim($_POST['name']);
+    $phone = trim($_POST['phone']);
+    $thickness = $_POST['thickness'] ? implode(', ', $_POST['thickness']) : '';
     $area = $_POST['area'] ?? '';
-    // $consultation = $_POST['consultation'] ?? '';
-    $picture = $_POST['picture'] ?? '';
+    $consultation = $_POST['consultation'] ? 'Нужна' : 'Не нужна';
+    $picture = $_POST['picture'] ? implode(', ', $_POST['picture']) : '';
     $mail = new PHPMailer(true);
 
     try {
@@ -34,8 +34,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         
         $emailBody = "
             <h2>Новый расчет фасад</h2>
-            <p><strong>Площадь объекта:</strong> {$thickness}</p>
-            <p><strong>Толщина утеплителя:</strong> {$area}</p>
+            <p><strong>Площадь объекта:</strong> {$area}</p>
+            <p><strong>Толщина утеплителя:</strong> {$thickness}</p>
+            <p><strong>Консультяция:</strong> {$consultation}</p>
             <p><strong>Выбор рисунка:</strong> {$picture}</p>
             <p><strong>Имя:</strong> {$name}</p>
             <p><strong>Телефон:</strong> {$phone}</p>

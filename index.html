@@ -751,7 +751,7 @@
                                                         <div class="range-slider">
                                                             <div class="range-slider__numb">
                                                                 <label>
-                                                                    <input type="tel" id="amount" pattern="[0-9]*">
+                                                                    <input type="tel" id="amount" name="area" pattern="[0-9]*">
                                                                     <span>
                                                                         <svg width="18" height="18" viewBox="0 0 18 18"
                                                                             fill="none"
@@ -831,8 +831,8 @@
 
                                                         <div class="form-checkbox">
                                                             <label class="form-checkbox__label">
-                                                                <input type="checkbox" name="" id=""
-                                                                    class="form-checkbox__input ">
+                                                                <input type="checkbox" name="thickness[]" id="" value="30 мм"
+                                                                    class="form-checkbox__input">
                                                                 <span class="form-checkbox__checked"></span>
                                                                 <span class="form-checkbox__content">
                                                                     30 мм
@@ -841,7 +841,7 @@
                                                         </div>
                                                         <div class="form-checkbox">
                                                             <label class="form-checkbox__label">
-                                                                <input type="checkbox" name="" id=""
+                                                                <input type="checkbox" name="thickness[]" id="" value="50 мм"
                                                                     class="form-checkbox__input" checked>
                                                                 <span class="form-checkbox__checked"></span>
                                                                 <span class="form-checkbox__content">
@@ -852,7 +852,7 @@
 
                                                         <div class="form-checkbox">
                                                             <label class="form-checkbox__label">
-                                                                <input type="checkbox" name="" id=""
+                                                                <input type="checkbox" name="thickness[]" id="" value="100 мм"
                                                                     class="form-checkbox__input">
                                                                 <span class="form-checkbox__checked"></span>
                                                                 <span class="form-checkbox__content">
@@ -863,7 +863,7 @@
 
                                                         <div class="form-checkbox">
                                                             <label class="form-checkbox__label">
-                                                                <input type="checkbox" name="" id=""
+                                                                <input type="checkbox" name="consultation" id=""
                                                                     class="form-checkbox__input">
                                                                 <span class="form-checkbox__checked"></span>
                                                                 <span class="form-checkbox__content">
@@ -945,7 +945,7 @@
                                                                     </svg>
 
                                                                 </span>
-                                                                <input type="checkbox" name="picture" id=""
+                                                                <input type="checkbox" name="picture[]" id="" value="Кирпич"
                                                                     class="form-checkbox__input">
                                                                 <span class="form-checkbox__checked"></span>
                                                                 <span class="form-checkbox__content">
@@ -967,8 +967,8 @@
                                                                     </svg>
 
                                                                 </span>
-                                                                <input type="checkbox" name="picture" id=""
-                                                                    class="form-checkbox__input">
+                                                                <input type="checkbox" name="picture[]" id="" value="Без рисунка"
+                                                                    class="form-checkbox__input" checked>
                                                                 <span class="form-checkbox__checked"></span>
                                                                 <span class="form-checkbox__content">
 
@@ -989,7 +989,7 @@
                                                                     </svg>
 
                                                                 </span>
-                                                                <input type="checkbox" name="picture" id=""
+                                                                <input type="checkbox" name="picture[]" id="" value="Другое"
                                                                     class="form-checkbox__input">
                                                                 <span class="form-checkbox__checked"></span>
                                                                 <span class="form-checkbox__content">
@@ -1057,18 +1057,18 @@
                                                         фасада в ближайшее время.</p>
                                                     <div class="quiz-content-form contact-form">
                                                         <label class="contact-form__label contact-form__item">
-                                                            <input type="text" class="contact-form__input js-name-input"
+                                                            <input type="text" name="name" class="contact-form__input js-name-input"
                                                                 placeholder="Имя" required>
                                                         </label>
                                                         <label class="contact-form__label contact-form__item">
-                                                            <input type="tel"
+                                                            <input type="tel" name="phone"
                                                                 class="contact-form__input phone-input js-phone-input"
                                                                 placeholder="+ 7 (900) 000-00-00" required>
                                                         </label>
                                                         <div class="form-checkbox contact-form__item">
                                                             <label class="form-checkbox__label">
                                                                 <input type="checkbox" name="" id=""
-                                                                    class="form-checkbox__input" checked>
+                                                                    class="form-checkbox__input" checked required>
                                                                 <span class="form-checkbox__checked"></span>
                                                                 <div class="form-checkbox__content">Даю согласие
                                                                     на обработку своих персональных
@@ -1092,7 +1092,7 @@
                                                     </svg>
                                                     Назад
                                                 </button>
-                                                <button type="submit" class="quiz-step__next btn btn-dark">
+                                                <button type="submit" class="btn btn-dark">
                                                     Получить расчет
                                                 </button>
                                             </div>
@@ -1842,7 +1842,7 @@
                                 </label>
                                 <div class="form-checkbox contact-form__item">
                                     <label class="form-checkbox__label">
-                                        <input type="checkbox" name="" id="" class="form-checkbox__input">
+                                        <input type="checkbox" name="" id="" class="form-checkbox__input" required>
                                         <span class="form-checkbox__checked"></span>
                                         <div class="form-checkbox__content">Даю согласие на обработку своих персональных
                                             данных в соответствии с <a href="./img/opd.pdf" target="_blank">Политикой
@@ -1909,7 +1909,7 @@
                         </a>
                     </div>
                     <div class="footer__info">
-                        <p>© 2023-2025. Все права защищены.</p>
+                        <p>© 2025-2025. Все права защищены.</p>
                         <p>ООО “Сатуро”</p>
                         <p>ИНН 6671290972</p>
                     </div>
@@ -1949,7 +1949,7 @@
                             </label>
                             <div class=" form-checkbox contact-form__item">
                                 <label class="form-checkbox__label">
-                                    <input type="checkbox" name="" id="" class="form-checkbox__input">
+                                    <input type="checkbox" name="" id="" class="form-checkbox__input" required>
                                     <span class="form-checkbox__checked"></span>
                                     <div class="form-checkbox__content">Даю согласие на обработку своих персональных
                                         данных в соответствии с <a href="./img/opd.pdf" target="_blank">Политикой

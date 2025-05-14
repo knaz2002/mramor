@@ -196,11 +196,20 @@ document.addEventListener("click", function (event) {
 });
 
 
-
-
-
-
 /****quiz */
+const quizData = {
+  area: 100, 
+  thickness: [], 
+  consultation: false, 
+  picture: [] 
+}
+
+const areaInput = document.querySelector("#amout");
+const thicknessInputs = document.querySelectorAll("[name='thickness[]']");
+const pictureInputs = document.querySelectorAll("[name='picture[]']");
+const consultationInput = document.querySelectorAll("[name='consultation']");
+
+
 const quizQuestions = document.querySelectorAll('.quiz-step');
 const nextButtons = document.querySelectorAll('.quiz-step__next');
 const backButtons = document.querySelectorAll('.quiz-step__back');
@@ -413,8 +422,6 @@ function scrollToTop() {
   });
 }
 
-
-
 // const checkbox = document.querySelector('.form-checkbox__input');
 // const submitButton = document.querySelector('.js-send');
 
@@ -491,8 +498,6 @@ formCallback.forEach((form) => {
 });
 
 // const formName = document.querySelector('.js-name-input');
-
-
 // btnModalSuccess.addEventListener('click', () => {
 //   btnCallOverlay.classList.toggle("active");
 //   modalSuccess.classList.toggle("active");
@@ -508,6 +513,7 @@ formsFeedback.forEach(form => {
     sendForm(this);
   })
 })
+
 
 function sendForm(form) {
   console.log('тест формы', 3)
@@ -543,7 +549,6 @@ function sendForm(form) {
 }
 
 
-
 const formQuiz= document.querySelector('.js-quiz-form');
 // const rangeSlider = document.querySelector('.range-slider');
 const checkboxes = document.querySelectorAll('.form-checkbox__input');
@@ -552,44 +557,27 @@ const textInput = document.querySelector('.js-name-input');
 
 formQuiz.addEventListener('submit', (e) => {
   e.preventDefault();
+  const form = e.target;
+  const formData = new FormData(form);
 
-  const rangeValue = rangeSlider.querySelector('#amount').value;
-  const checkboxValues = [];
-  checkboxes.forEach((checkbox) => {
-    if (checkbox.checked) {
-      checkboxValues.push(checkbox.name);
-    }
-  });
-  const telValue = telInput.value;
-  const textValue = textInput.value;
-
-  const formData = {
-    rangeValue,
-    checkboxValues,
-    telValue,
-    textValue,
-  };
-
-  // fetch('../quiz.php', {
-  //   method: 'POST',
-  //   headers: {
-  //     'Content-Type': 'application/json',
-  //   },
-  //   body: JSON.stringify(formData),
-  // })
-  //   .then((response) => response.json())
-  //   .then((data) => console.log(data))
-  //   .catch((error) => console.error(error));
+  fetch('../quiz.php', {
+    method: 'POST',
+    body: formData,
+  })
+    .then((response) => {
+      response.json()
+    })
+    .then((data) => {
+      if(data.success) {
+        showQuestion(4);
+      }else{
+        alert(data.message)
+      }
+    })
+    .catch((error) => alert(error));
 });
 
 
 
-// const quizData = {
-//   area: 0, //--площадь объекта
-//   thickness: 50, //---толщина стен
-//   // consultation: false, //---консультация
-//   picture: '', //---изображение
-// }
 
-// quizData.ploshad = 120
-// console.log(quizData)
+
