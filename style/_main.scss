@@ -540,7 +540,7 @@
 }
 .panel-item {
   background-color: rgb(var(--grey));
-  padding: 48px 24px;
+  padding: 48px 24px 10px;
   display: flex;
   flex-direction: column;
   overflow: hidden;
@@ -550,7 +550,7 @@
     min-height: 300px;
   }
   @media (max-width: 767px) {
-    padding: 24px 16px;
+    padding: 24px 16px 0px;
   }
   &::before {
     content: "";
@@ -564,7 +564,7 @@
     background-color: rgb(var(--grey));
     z-index: 1;
     @media (max-width: 767px) {
-      height: 24px;
+      height: 40px;
     }
   }
   &__title {

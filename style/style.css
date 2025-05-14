@@ -1141,7 +1141,7 @@ section {
 
 .panel-item {
   background-color: rgb(var(--grey));
-  padding: 48px 24px;
+  padding: 48px 24px 10px;
   display: flex;
   flex-direction: column;
   overflow: hidden;
@@ -1155,7 +1155,7 @@ section {
 }
 @media (max-width: 767px) {
   .panel-item {
-    padding: 24px 16px;
+    padding: 24px 16px 0px;
   }
 }
 .panel-item::before {
@@ -1172,7 +1172,7 @@ section {
 }
 @media (max-width: 767px) {
   .panel-item::before {
-    height: 24px;
+    height: 40px;
   }
 }
 .panel-item__title {
