@@ -1075,12 +1075,46 @@
     div {
       position: relative;
       font-size: 14px;
+      &:first-child {
+        padding-left: 30px;
+        &:before {
+          content: "";
+          display: block;
+          background-position: 50% 50%;
+          background-repeat: no-repeat;
+          width: 24px;
+          height: 24px;
+          position: absolute;
+          left: 0;
+          top: -3px;
+        }
+      }
       &:nth-child(2) {
         flex-grow: 1;
         border-bottom: dashed 1px rgba(var(--dark), 0.24);
         margin-bottom: 5px;
         max-width: 75%;
       }
+    }
+  }
+  &__look {
+    &:before {
+      background-image: url("../img/icons/item5.svg");
+    }
+  }
+  &__size {
+    &:before {
+      background-image: url("../img/icons/item1.svg");
+    }
+  }
+  &__thickness {
+    &:before {
+      background-image: url("../img/icons/item2.svg");
+    }
+  }
+  &__base {
+    &:before {
+      background-image: url("../img/icons/item4.svg");
     }
   }
   &__tags {
