@@ -1041,7 +1041,7 @@
                                 </div>
                             </div>
 
-                            <div class="quiz-step">
+                            <div class="quiz-step form-callback">
                                 <div class="quiz-step__inner">
                                     <div class="quiz-step__content">
                                         <div class="quiz-content">
@@ -1070,17 +1070,18 @@
                                                         <label class="contact-form__label contact-form__item">
                                                             <input type="text" name="name"
                                                                 class="contact-form__input js-name-input"
-                                                                placeholder="Имя" required>
+                                                                placeholder="Имя" required pattern="[a-zA-Zа-яА-Я]{2,}">
                                                         </label>
                                                         <label class="contact-form__label contact-form__item">
                                                             <input type="tel" name="phone"
                                                                 class="contact-form__input phone-input js-phone-input"
-                                                                placeholder="+ 7 (900) 000-00-00" required>
+                                                                placeholder="+ 7 (900) 000-00-00" required
+                                                                pattern="\+7\s\(\d{3}\)\s\d{3}-\d{2}-\d{2}">
                                                         </label>
                                                         <div class="form-checkbox contact-form__item">
                                                             <label class="form-checkbox__label">
                                                                 <input type="checkbox" name="" id=""
-                                                                    class="form-checkbox__input" checked required>
+                                                                    class="form-checkbox__input" required>
                                                                 <span class="form-checkbox__checked"></span>
                                                                 <div class="form-checkbox__content">Даю согласие
                                                                     на обработку своих персональных
@@ -1104,7 +1105,7 @@
                                                     </svg>
                                                     Назад
                                                 </button>
-                                                <button type="submit" class="btn btn-dark">
+                                                <button type="submit" class="btn btn-dark js-send">
                                                     Получить расчет
                                                 </button>
                                             </div>
@@ -1116,7 +1117,7 @@
                                 </div>
                             </div>
 
-                            <div class="quiz-step">
+                            <div class="quiz-step ">
                                 <div class="quiz-step__inner">
                                     <div class="quiz-step__content">
                                         <div class="quiz-content">
@@ -1845,7 +1846,7 @@
                             <div class="contact-form">
                                 <label class="contact-form__label contact-form__item">
                                     <input type="text" class="contact-form__input js-name-input" placeholder="Имя"
-                                        required pattern="[a-zA-Zа-яА-Я]{3,}">
+                                        required pattern="[a-zA-Zа-яА-Я]{2,}">
                                 </label>
                                 <label class="contact-form__label contact-form__item">
                                     <input type="tel" class="contact-form__input phone-input js-phone-input"
@@ -1952,7 +1953,7 @@
                         <div class="contact-form">
                             <label class="contact-form__label contact-form__item">
                                 <input type="text" class="contact-form__input js-name-input" placeholder="Имя" required
-                                    pattern="[a-zA-Zа-яА-Я]{3,}">
+                                    pattern="[a-zA-Zа-яА-Я]{2,}">
                             </label>
                             <label class="contact-form__label contact-form__item">
                                 <input type="tel" class="contact-form__input phone-input js-phone-input"
