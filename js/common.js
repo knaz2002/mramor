@@ -564,9 +564,7 @@ formQuiz.addEventListener('submit', (e) => {
     method: 'POST',
     body: formData,
   })
-    .then((response) => {
-      response.json()
-    })
+    .then(response => response.json())
     .then((data) => {
       if(data.success) {
         showQuestion(4);
